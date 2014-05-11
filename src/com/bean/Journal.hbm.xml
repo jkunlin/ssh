@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bean.Journal" table="journal" catalog="storyfm">
+		<id name="journal_id" type="java.lang.Integer">
+			<column name="journal_id"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="article0_id" type="java.lang.Integer">
+			<column name="article0_id" not-null="false"></column>
+		</property>
+		<property name="article1_id" type="java.lang.Integer">
+			<column name="article1_id" not-null="false"></column>
+		</property>
+		<property name="article2_id" type="java.lang.Integer">
+			<column name="article2_id" not-null="false"></column>
+		</property>
+		<property name="article3_id" type="java.lang.Integer">
+			<column name="article3_id" not-null="false"></column>
+		</property>
+		<property name="article4_id" type="java.lang.Integer">
+			<column name="article4_id" not-null="false"></column>
+		</property>
+		<property name="article5_id" type="java.lang.Integer">
+			<column name="article5_id" not-null="false"></column>
+		</property>
+		<property name="article5_id" type="java.lang.Integer">
+			<column name="article5_id" not-null="false"></column>
+		</property>
+		<property name="article6_id" type="java.lang.Integer">
+			<column name="article6_id" not-null="false"></column>
+		</property>
+		<property name="article7_id" type="java.lang.Integer">
+			<column name="article7_id" not-null="false"></column>
+		</property>
+	</class>
+</hibernate-mapping>

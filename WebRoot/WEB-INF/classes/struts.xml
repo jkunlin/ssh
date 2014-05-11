@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.devMode" value="false" />
+	<package name="user"  extends="struts-default">
+		<action name="login" class="loginAction">
+			<result name="success">/Article_List.jsp</result>
+			<result name="input">/wellcome.jsp</result>
+		</action>
+		<!-- 
+		<action name="enrollAction" class="EnrollAction">
+			<result name="success">/login.jsp</result>
+			<result name="input">/enroll.jsp</result>
+		</action>
+		<action name="login" class="Login">
+			<result name="success">/Article_List.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		 -->
+	</package>
+	<package name="journal" extends="struts-default">
+		<action name="list_journal" class="list_journal_acton">
+			<result>/Article_list.jsp</result>
+		</action>
+	</package>
+</struts>    

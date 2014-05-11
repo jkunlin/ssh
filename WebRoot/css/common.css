@@ -1,0 +1,61 @@
+/* =====================================================================
+ * Intro       kakaFocus
+ * Author      icarrien@gmail.com
+ * Version     v1.0
+ * WEB         http://byzuo.com
+ * Download    http://sc.xueit.com
+ * MadeTime    2010-05-28
+ * LastModify  2010-05-28
+ =====================================================================*/
+
+/*
+	Reset&Clearfix
+*******************/
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td{margin:0;padding:0;word-wrap:break-word;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+ul,li{list-style:none;}
+legend{display:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+em,strong,cite,th{font-style:normal;font-weight:400;}
+textarea,select,optgroup,option{font:12px Helvetica,Arial,sans-serif;}
+q:before,q:after{content:'';}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+	.clearfix{display:inline-block;}
+	/*\*/ .clearfix{display:block;} /**/
+/*html{overflow:-moz-scrollbars-vertical;}*/
+a{color:#0287CA;text-decoration:none;}
+	a:hover{text-decoration:underline;}
+
+/*
+	banner
+*******************/
+.banner {
+	position: relative;
+	width: 790px;
+	height: 250px;
+	overflow: hidden;
+	margin: 10px auto;
+}
+	.banner_pic { position:relative; width:630px; height:210px; overflow:hidden; margin:0px auto 0; }
+	.banner_pic ul { position:absolute; top:0; left:0; width:99999px; height:235px; }
+	.banner_pic ul li { float:left; width:630px; }
+	.banner a.btn_prev, .banner a.btn_next { display:block; width:30px; height:55px; overflow:hidden; margin-top:100px; background-image:url(../images/kakaFoucs_bg.gif); text-indent:-9999px; outline:none; hide-focus:expression(this.hideFocus=true); }
+		.banner a.btn_prev { float:left; margin-left:2px!important; margin-left:1px; background-position:0 -350px; }
+		.banner a.btn_next { float:right; margin-right:2px!important; margin-right:1px; background-position:-100px -350px;}
+		.banner a.btn_prev:hover { background-position:-200px -350px; }
+		.banner a.btn_next:hover { background-position:-300px -350px; }
+	.banner_info { position:absolute; top:212px; left:130px; width:430px; height:40px; overflow:hidden; }
+		.banner_info li{ display:none; }
+		.banner_info li.current { display:block; }
+		.banner_info li h4 { height:20px; overflow:hidden; }
+			.banner_info li h4 a { color:#666; font-size:14px; }
+		.banner_info li .ext, .banner_info li .ext a { color:#999; }
+		span.pipe { padding:0 6px;}
+	.banner_count { position:absolute; left:85px; top:212px; width:28px; height:30px; overflow:hidden; background:url(../images/kakaFoucs_bg.gif) no-repeat -400px -350px; color:#FFF; font-family:Verdana; text-align:center; line-height:42px; }
+	.banner_pages { position:absolute; right:80px; top:212px; width:140px; height:30px; overflow:hidden; }
+		.banner_pages ul { float:right; }
+		.banner_pages li { float:left; margin-left:4px;}
+		.banner_pages li span { display:block; width:9px; height:9px; overflow:hidden; background:url(../images/kakaFoucs_bg.gif) no-repeat -600px -350px; text-indent:-9999px; cursor:pointer; }
+		.banner_pages li span:hover { background-position:-550px -350px; }
+		.banner_pages li.current span, .banner_pages li.current span:hover { background:url(../images/kakaFoucs_bg.gif) no-repeat -500px -350px; }
