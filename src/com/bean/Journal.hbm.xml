@@ -6,7 +6,11 @@
 	<class name="com.bean.Journal" table="journal" catalog="storyfm">
 		<id name="journal_id" type="java.lang.Integer">
 			<column name="journal_id"></column>
-			<generator class="increment"></generator>
+			<generator class="identity"></generator>
 		</id>
+		<set name="articles" inverse="true">
+			<key column="journal_id"></key>
+			<one-to-many class="com.bean.Article"></one-to-many>
+		</set>
 	</class>
 </hibernate-mapping>
