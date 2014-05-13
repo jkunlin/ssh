@@ -27,7 +27,6 @@
 			<list>
 				
 				<value>com/bean/User.hbm.xml</value>
-				
 				<value>com/bean/Journal.hbm.xml</value>
 				<value>com/bean/Article.hbm.xml</value>
 			

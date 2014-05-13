@@ -5,9 +5,16 @@ import java.util.Set;
 
 public class Journal {
 	private Integer journal_id;
+	private String journal_title;
 	private Set<Article> articles = new HashSet<Article>();
 	
 	
+	public String getJournal_title() {
+		return journal_title;
+	}
+	public void setJournal_title(String journal_title) {
+		this.journal_title = journal_title;
+	}
 	public Integer getJournal_id() {
 		return journal_id;
 	}
