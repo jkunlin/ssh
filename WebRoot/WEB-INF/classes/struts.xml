@@ -5,7 +5,7 @@
 	<constant name="struts.devMode" value="false" />
 	<package name="user"  extends="struts-default">
 		<action name="login" class="loginAction">
-			<result name="success">/Article_List.jsp</result>
+			<result name="success" type="redirect">listJournal.action</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
 		<!-- 
@@ -20,8 +20,8 @@
 		 -->
 	</package>
 	<package name="journal" extends="struts-default">
-		<action name="list_journal" class="list_journal_acton">
-			<result>/Article_list.jsp</result>
+		<action name="listJournal" class="listJournalAction">
+			<result>/Article_List.jsp</result>
 		</action>
 	</package>
 </struts>    

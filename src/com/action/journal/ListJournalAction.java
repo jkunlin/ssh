@@ -8,13 +8,19 @@ public class ListJournalAction extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 113798207564591586L;
-	private Integer article_id;
 	private JournalService service;
-	
+
+
+
+	public void setService(JournalService service) {
+		this.service = service;
+	}
+
+
+
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		article_id += 0;
 		return SUCCESS;
 	}
 }
