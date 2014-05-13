@@ -1,7 +1,7 @@
 package com.action.journal;
 
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import com.bean.Article;
 import com.opensymphony.xwork2.ActionContext;
@@ -35,7 +35,8 @@ public class ListJournalAction extends ActionSupport {
 		@SuppressWarnings("rawtypes")
 		Map request = (Map) ActionContext.getContext().get("request");
 		request.put("journal_list", service.find_all_title());
-		Set<Article> article_list = service.find_article_of_journal(1);
+		List<Article> article_list = service.find_article_of_journal(1);
+		System.out.println(article_list.get(0).getArticle_id());
 		request.put("article_list", article_list);
 		return SUCCESS;
 	}

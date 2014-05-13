@@ -1,7 +1,6 @@
 package com.service.impl;
 
 import java.util.List;
-import java.util.Set;
 
 import com.bean.Article;
 import com.bean.Journal;
@@ -26,7 +25,7 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public Set<Article> find_article_of_journal(Integer journal_id) {
+	public List<Article> find_article_of_journal(Integer journal_id) {
 		return journalDAO.find_article_of_journal(journal_id);
 	}
 

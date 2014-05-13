@@ -1,7 +1,6 @@
 package com.dao;
 
 import java.util.List;
-import java.util.Set;
 
 import com.bean.Article;
 import com.bean.Journal;
@@ -17,7 +16,7 @@ public interface JournalDAO {
 	
 	public List<Journal> find_all_journal();
 	
-	public Set<Article> find_article_of_journal(Integer journal_id);
+	public List<Article> find_article_of_journal(Integer journal_id);
 
 //	public void update_journal(Journal journal);
 }
