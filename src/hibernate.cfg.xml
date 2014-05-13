@@ -15,5 +15,5 @@
 	
 	<mapping resource="com/bean/User.hbm.xml"/>
 	<mapping resource="com/bean/Journal.hbm.xml"/>	
-	<mapping resource="com/bean/Article.hbm.xnl"></mapping>
+	<mapping resource="com/bean/Article.hbm.xml"/>
 </session-factory></hibernate-configuration>
