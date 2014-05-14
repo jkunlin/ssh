@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -109,7 +111,7 @@
 						<h3><a target="_blank" href="http://tympanus.net/codrops/2011/12/08/design-it-to-build-it-what-to-consider-when-designing-for-the-web/">Design It to Build It: What to Consider When Designing for the Web</a></h3>
 						<span>December 8, 2011 by Patrick Cox</span>
 					</header>
-					<p>For me, Photoshop is becoming more and more of a prototyping or blue printing tool: it’s basically just a canvas...</p>
+					<p>For me, Photoshop is becoming more and more of a prototyping or blue printing tool: itâs basically just a canvas...</p>
 				</article>
 				<article>
 					<header>
@@ -123,7 +125,7 @@
 						<h3><a target="_blank" href="http://tympanus.net/codrops/2011/12/05/lateral-on-scroll-sliding-with-jquery/">Lateral On-Scroll Sliding with jQuery</a></h3>
 						<span>December 5, 2011 by Mary Lou </span>
 					</header>
-					<p>After getting the request, we are going to show you how to create a “slide-in on scroll” effect. You’ve probably seen this cool effect on some websites, like on Nizo or in the portfolio section of brilliantly designed La Moulade. </p>
+					<p>After getting the request, we are going to show you how to create a âslide-in on scrollâ effect. Youâve probably seen this cool effect on some websites, like on Nizo or in the portfolio section of brilliantly designed La Moulade. </p>
 				</article>
 				<article>
 					<header>
@@ -144,7 +146,7 @@
 						<h3><a target="_blank" href="http://tympanus.net/codrops/2011/11/28/typography-effects-with-css3-and-jquery/">Typography Effects with CSS3 and jQuery</a></h3>
 						<span>November 28, 2011 by Mary Lou</span>
 					</header>
-					<p>Today we will create a set of nice typography effects for big headlines using CSS3 and jQuery. There are many things we can do with CSS3 animations and transitions and we’ll...</p>
+					<p>Today we will create a set of nice typography effects for big headlines using CSS3 and jQuery. There are many things we can do with CSS3 animations and transitions and weâll...</p>
 				</article>
 				<article>
 					<header>
@@ -162,21 +164,30 @@
 		<div class="float-news" id="float-news" style="left:-450px; top:75px; width:320px;height:500px">
 			<a class="float-close" id="float-close" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:void(0);">X</a>
 			<div class="newslist">
-				<h3>往期杂志</h3>
+				<h3>what the hell</h3>
 				<ul>
+				<!-- 
 					<li>
-						<a href="#">2013-10 我们来自火星么?<a/>			
+						<a href="#">2013-10 æä»¬æ¥èªç«æä¹?<a/>			
 					</li>
 					<li>
-						<a href="#">2013-11 星星上的你<a/>		
+						<a href="#">2013-11 ææä¸çä½ <a/>		
 					</li>
 					<li>
-						<a href="#">2013-12 玉兔骑士的世界<a/>		
+						<a href="#">2013-12 çåéªå£«çä¸ç<a/>		
 					</li>
 					<li>
-						<a href="#">2014-01 疯狂的人类<a/>		
+						<a href="#">2014-01 ç¯ççäººç±»<a/>		
 					</li>
+				-->
+					<s:iterator value="#request.journal_list" id = "journal">
+						<li>
+							<s:a href="listJournal.action?journal_id=%{#journal[0]}"><s:property value="#journal[1]"/> </s:a>
+						</li>
+					</s:iterator>
 				</ul>
+				
+				
 			</div>
 		</div>
     </body>

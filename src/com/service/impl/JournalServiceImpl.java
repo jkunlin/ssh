@@ -3,7 +3,6 @@ package com.service.impl;
 import java.util.List;
 
 import com.bean.Article;
-import com.bean.Journal;
 import com.dao.JournalDAO;
 import com.service.JournalService;
 
@@ -14,11 +13,13 @@ public class JournalServiceImpl implements JournalService {
 		this.journalDAO = journalDAO;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
-	public List<Journal> find_all() {
+	public List find_all() {
 		return journalDAO.find_all_journal();
 	}
-
+	
+	
 	@Override
 	public List<String> find_all_title() {
 		return journalDAO.find_all_journal_title();
@@ -28,5 +29,12 @@ public class JournalServiceImpl implements JournalService {
 	public List<Article> find_article_of_journal(Integer journal_id) {
 		return journalDAO.find_article_of_journal(journal_id);
 	}
+
+	@Override
+	public Integer find_first_journal_id() {
+		return journalDAO.find_first_journal_id();
+	}
+
+	
 
 }

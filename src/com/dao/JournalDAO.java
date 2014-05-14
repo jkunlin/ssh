@@ -14,9 +14,13 @@ public interface JournalDAO {
 	
 	public List<String> find_all_journal_title();
 	
-	public List<Journal> find_all_journal();
+	@SuppressWarnings("rawtypes")
+	public List find_all_journal();
 	
 	public List<Article> find_article_of_journal(Integer journal_id);
+	
+	public Integer find_first_journal_id();
+	
 
 //	public void update_journal(Journal journal);
 }
