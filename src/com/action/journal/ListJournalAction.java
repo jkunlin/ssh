@@ -29,10 +29,9 @@ public class ListJournalAction extends ActionSupport {
 
 
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public String execute() throws Exception {
-		@SuppressWarnings("rawtypes")
 		Map request = (Map) ActionContext.getContext().get("request");
 		
 		List journal_list = service.find_all();

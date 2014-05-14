@@ -3,7 +3,23 @@ package com.bean;
 public class Article {
 	private Journal journal;
 	private Integer article_id;
+	private String title;
+	private String outline;
 	
+	
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getOutline() {
+		return outline;
+	}
+	public void setOutline(String outline) {
+		this.outline = outline;
+	}
 	public Journal getJournal() {
 		return journal;
 	}

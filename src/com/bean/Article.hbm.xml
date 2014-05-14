@@ -8,6 +8,12 @@
 			<column name="article_id"></column>
 			<generator class="identity"></generator>
 		</id>
+		<property name="outline" type="java.lang.String">
+			<column name="outline" length="20" not-null="true"></column>
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="title" length="20" not-null="true"></column>
+		</property>
 		<many-to-one name="journal" class="com.bean.Journal" 
 		column="journal_id" not-null="true"></many-to-one>
 	</class>

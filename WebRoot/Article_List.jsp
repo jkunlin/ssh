@@ -99,6 +99,18 @@
 				<h2>Using Box Shadows, Transform and Transitions</h2>
 			</header>
 			<section class="ib-container" id="ib-container">
+				<s:iterator value="#request.article_list" id = "article">
+					<article>
+						<header>
+							<h3><s:a target="_blank" href="http://tympanus.net/codrops/2011/12/08/25-examples-of-perfect-color-combinations-in-web-design/">
+								<s:property value="#article.title"/>
+							</s:a></h3>
+							<span>December 8, 2011 by Gisele Muller</span>
+						</header>
+						<p><s:property value="#article.outline"/></p>
+					</article>
+				</s:iterator>
+				<!-- 
 				<article>
 					<header>
 						<h3><a target="_blank" href="http://tympanus.net/codrops/2011/12/08/25-examples-of-perfect-color-combinations-in-web-design/">25 Examples of Perfect Color Combinations in Web Design</a></h3>
@@ -155,6 +167,7 @@
 					</header>
 					<p>So you're still not using HTML5, huh? I guess you probably have your reasons; it's not fully adopted yet, it doesn't work in IE, you don't like users, you're out of touch or you are just...</p>
 				</article>
+				 -->
 			</section>
         </div>
 				<div class="float-open" id="float-open" style="left:-2px; top:100px;background:url(images/history.png) no-repeat;background-size:90% 90%;background-position:center;">
