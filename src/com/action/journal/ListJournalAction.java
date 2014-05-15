@@ -3,7 +3,6 @@ package com.action.journal;
 import java.util.List;
 import java.util.Map;
 
-import com.bean.Article;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.JournalService;
@@ -39,8 +38,8 @@ public class ListJournalAction extends ActionSupport {
 		if (journal_id == null) {
 			journal_id = (Integer)((Object[])journal_list.get(0))[0];
 		}
-		List<Article> article_list = service.find_article_of_journal(journal_id);
-		System.out.println(article_list.get(0).getArticle_id());
+		List article_list = service.find_article_of_journal(journal_id);
+		//System.out.println(article_list.get(0));
 		request.put("article_list", article_list);
 		/*
 		request.put("journal_list", service.find_all_title());

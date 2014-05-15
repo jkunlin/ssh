@@ -16,5 +16,9 @@
 		</property>
 		<many-to-one name="journal" class="com.bean.Journal" 
 		column="journal_id" not-null="true"></many-to-one>
+		<set name="chapters" inverse="true">
+			<key column="article_id"></key>
+			<one-to-many class="com.bean.Chapter"></one-to-many>
+		</set>
 	</class>
 </hibernate-mapping>

@@ -2,7 +2,6 @@ package com.service.impl;
 
 import java.util.List;
 
-import com.bean.Article;
 import com.dao.JournalDAO;
 import com.service.JournalService;
 
@@ -25,8 +24,9 @@ public class JournalServiceImpl implements JournalService {
 		return journalDAO.find_all_journal_title();
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
-	public List<Article> find_article_of_journal(Integer journal_id) {
+	public List find_article_of_journal(Integer journal_id) {
 		return journalDAO.find_article_of_journal(journal_id);
 	}
 

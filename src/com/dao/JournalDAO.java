@@ -2,9 +2,6 @@ package com.dao;
 
 import java.util.List;
 
-import com.bean.Article;
-import com.bean.Journal;
-
 public interface JournalDAO {
 //	public void save_journal(Journal journal);
 
@@ -17,7 +14,8 @@ public interface JournalDAO {
 	@SuppressWarnings("rawtypes")
 	public List find_all_journal();
 	
-	public List<Article> find_article_of_journal(Integer journal_id);
+	@SuppressWarnings("rawtypes")
+	public List find_article_of_journal(Integer journal_id);
 	
 	public Integer find_first_journal_id();
 	

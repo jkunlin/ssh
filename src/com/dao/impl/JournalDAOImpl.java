@@ -38,11 +38,11 @@ public class JournalDAOImpl implements JournalDAO {
 		return res;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public List<Article> find_article_of_journal(Integer journal_id) {
+	public List find_article_of_journal(Integer journal_id) {
 		Session session = sessionFactory.openSession();
-		String hql = "from Article article where article.journal.journal_id = " + journal_id;
+		String hql = "select article_id, title, outline from Article article where article.journal.journal_id = " + journal_id;
 		List<Article> res = session.createQuery(hql).list();
 		session.close();
 		return res;

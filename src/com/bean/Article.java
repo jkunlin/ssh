@@ -1,13 +1,23 @@
 package com.bean;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Article {
 	private Journal journal;
 	private Integer article_id;
 	private String title;
 	private String outline;
+	private Set<Chapter> chapters = new HashSet<Chapter>();
 	
 	
 	
+	public Set<Chapter> getChapters() {
+		return chapters;
+	}
+	public void setChapters(Set<Chapter> chapters) {
+		this.chapters = chapters;
+	}
 	public String getTitle() {
 		return title;
 	}

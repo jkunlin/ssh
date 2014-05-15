@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bean.Chapter" table="chapter" catalog="storyfm">
+		<id name="chapter_id" type="java.lang.Integer">
+			<column name="chapter_id"></column>
+			<generator class="identity"></generator>
+		</id>
+		<property name="sequence" type="java.lang.Integer">
+			<column name="sequence" not-null="true"></column>
+		</property>
+		
+		<many-to-one name="article" class="com.bean.Article" 
+		column="article_id" not-null="true"></many-to-one>
+	</class>
+</hibernate-mapping>
