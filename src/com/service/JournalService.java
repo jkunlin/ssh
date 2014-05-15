@@ -9,4 +9,6 @@ public interface JournalService {
 	public Integer find_first_journal_id();
 	@SuppressWarnings("rawtypes")
 	public List find_article_of_journal(Integer journal_id);
+	public void add_journal(String journal_title, List<String> articles_title,
+			List<String> articles_outline, List<String> chapters_title);
 }

@@ -115,13 +115,13 @@ function save_article(){
 }
 function newJournalListHTMLmaker(ArticleNumber,ChapterNumber){
 	var arr=new Array();
-	arr.push('<ul><li>刊号：<input type="text"/></li><li>标题：<input type="text"/></li>');
+	arr.push('<ul><li>刊号：<input type="text"/></li><li>标题：<input type="text"  name="journal_title"/></li>');
 	for(var i=1;i<ArticleNumber+1;i++){
 		arr.push('<li><a href="javascript:edit_article('+i+')"><div id="new'+i+'">'+i+' 点击编辑</div><a/>');
-		arr.push('<input id="new1title'+i+'" style="display:none" type="text" value=""/>');
-		arr.push('<input id="new1content'+i+'" style="display:none" type="text" value=""/>');
+		arr.push('<input name="articles_title['+(i-1)+']" id="new1title'+i+'" style="display:none" type="text" value=""/>');
+		arr.push('<input name="articles_outline['+(i-1)+']" id="new1content'+i+'" style="display:none" type="text" value=""/>');
 		for (var j=1;j<ChapterNumber+1;j++)
-			arr.push('<input id="new'+i+'chapter'+j+'" style="display:none" type="text"  value=""/>')
+			arr.push('<input name="chapters_title['+((i-1)*ChapterNumber+j-1)+']" id="new'+i+'chapter'+j+'" style="display:none" type="text"  value=""/>');
 		arr.push('</li>');
 	}
 	arr.push('<li><input class="submit" type="submit" value="新建"></li></ul>');
@@ -131,7 +131,7 @@ function newEditeJournalListHTMLmaker(ChapterNumber){
 	var arr=new Array();
 	arr.push('<ul>');
 	for(var i=1;i<ChapterNumber+1;i++)
-		arr.push('<li align="right">第'+i+'章标题:<input id="newchapter'+i+'" style="width:200px" type="text"  value=""/></li>');
+		arr.push('<li align="right">第'+i+'章标题:<input id="newchapter'+i+'"  style="width:200px" type="text"  value=""/></li>');
 	arr.push('</ul>');
 	document.getElementById("new-edit-joural-html").innerHTML = arr.join(' ');
 	document.getElementById("chapter_number").value=ChapterNumber;

@@ -23,5 +23,8 @@
 		<action name="listJournal" class="listJournalAction">
 			<result>/Article_List.jsp</result>
 		</action>
+		<action name="addJournal" class="addJournalAction">
+			<result name="success" type="redirect">listJournal.action</result>
+		</action>
 	</package>
 </struts>    

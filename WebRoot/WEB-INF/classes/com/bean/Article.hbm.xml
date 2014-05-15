@@ -9,13 +9,13 @@
 			<generator class="identity"></generator>
 		</id>
 		<property name="outline" type="java.lang.String">
-			<column name="outline" length="20" not-null="true"></column>
+			<column name="outline" length="20" not-null="false"></column>
 		</property>
 		<property name="title" type="java.lang.String">
-			<column name="title" length="20" not-null="true"></column>
+			<column name="title" length="20" not-null="false"></column>
 		</property>
 		<many-to-one name="journal" class="com.bean.Journal" 
-		column="journal_id" not-null="true"></many-to-one>
+		column="journal_id" not-null="true" cascade="all"></many-to-one>
 		<set name="chapters" inverse="true">
 			<key column="article_id"></key>
 			<one-to-many class="com.bean.Chapter"></one-to-many>

@@ -9,7 +9,7 @@
 			<generator class="identity"></generator>
 		</id>
 		<property name="journal_title" type="java.lang.String">
-			<column name="journal_title" length="20" not-null="true"></column>
+			<column name="journal_title" length="20" not-null="false"></column>
 		</property>
 		<set name="articles" inverse="true">
 			<key column="journal_id"></key>

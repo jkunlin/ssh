@@ -2,6 +2,9 @@ package com.service.impl;
 
 import java.util.List;
 
+import com.bean.Article;
+import com.bean.Chapter;
+import com.bean.Journal;
 import com.dao.JournalDAO;
 import com.service.JournalService;
 
@@ -35,6 +38,29 @@ public class JournalServiceImpl implements JournalService {
 		return journalDAO.find_first_journal_id();
 	}
 
+	@Override
+	public void add_journal(String journal_title, List<String> articles_title,
+			List<String> articles_outline, List<String> chapters_title) {
+		Journal journal = new Journal();
+		journal.setJournal_title(journal_title);
+		for (int i = 0; i < articles_title.size(); ++i) {
+			Article article = new Article();
+			article.setJournal(journal);
+			article.setTitle(articles_title.get(i));
+			article.setOutline(articles_outline.get(i));
+			for (int j = 0; j < chapters_title.size() / articles_title.size(); ++j) {
+				Chapter chapter = new Chapter();
+				chapter.setArticle(article);
+				chapter.setTitle(chapters_title.get(j));
+				chapter.setSequence(j);
+				journalDAO.add_chapter(chapter);
+			}
+		}
+		
+	}
+
+	
+	
 	
 
 }

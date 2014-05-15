@@ -140,6 +140,7 @@
 			<a class="float-close" id="float-close-new-set" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:void(0);"></a>
 			<div class="newslist">
 				<h3>设置新杂志</h3>
+				
 				<table>
 					<tr><td>新杂志文章数目(1-12)</td></tr>
 					<tr><td><input type="text" id="article_number_set" style="width:185px" value=8 /></td></tr>
@@ -149,6 +150,7 @@
 						<td style="height:50px" align="left"><input class="submit" type="button" value="确定" onclick="javascript:open_new_article()"></td>
 					</tr>
 				</table>
+				
 			</div>
 		</div>
 		
@@ -156,10 +158,10 @@
 		<div class="float-news" id="float-new" style="left:-300px; top:75px; width:200px;height:550px">
 			<a class="float-close" id="float-close-new" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:void(0);">X</a>
 			<div class="newslist">
-			<form id="new-journal">
+			<s:form action="addJournal" id="new-journal">
 				<h3>新建杂志</h3>
 				<div id="new-joural-html"/>
-			</form>
+			</s:form>
 			</div>
 		</div>
 		

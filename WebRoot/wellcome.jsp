@@ -63,12 +63,20 @@
 				</ul>
 			</section>
             <p class="codrops-demos">
-            <s:form action="login">
-            	<s:textfield name="username" label="username"></s:textfield>
-            	<s:textfield name="password" label="password"></s:textfield>
-            	<s:submit></s:submit>
-            </s:form>
+            <!--
+	            <s:form action="login">
+	            	<s:textfield name="username" label="username"></s:textfield>
+	            	<s:textfield name="password" label="password"></s:textfield>
+	            	<s:submit></s:submit>
+	            </s:form> 
+             -->
+            <form action="login" method="post">
+			  		用户名: <input type="text" name="username" />
+  					密码: <input type="text" name="password" />
+		  			<input class="submit" type="submit" value="登录" />
+			</form>
             </p>
+            
         </div>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.proximity.js"></script>

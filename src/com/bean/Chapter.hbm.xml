@@ -11,8 +11,11 @@
 		<property name="sequence" type="java.lang.Integer">
 			<column name="sequence" not-null="true"></column>
 		</property>
+		<property name="title" type="java.lang.String">
+			<column name="title" length="20" not-null="false"></column>
+		</property>
 		
 		<many-to-one name="article" class="com.bean.Article" 
-		column="article_id" not-null="true"></many-to-one>
+		column="article_id" not-null="true" cascade="all"></many-to-one>
 	</class>
 </hibernate-mapping>

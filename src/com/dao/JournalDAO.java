@@ -2,6 +2,8 @@ package com.dao;
 
 import java.util.List;
 
+import com.bean.Chapter;
+
 public interface JournalDAO {
 //	public void save_journal(Journal journal);
 
@@ -19,6 +21,7 @@ public interface JournalDAO {
 	
 	public Integer find_first_journal_id();
 	
+	public void add_chapter(Chapter chapter);
 
 //	public void update_journal(Journal journal);
 }

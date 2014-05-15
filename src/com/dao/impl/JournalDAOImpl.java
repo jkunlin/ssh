@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.bean.Article;
+import com.bean.Chapter;
 import com.dao.JournalDAO;
 
 public class JournalDAOImpl implements JournalDAO {
@@ -58,6 +59,14 @@ public class JournalDAOImpl implements JournalDAO {
 		query.setMaxResults(1);
 		Integer res = (Integer)query.list().get(0);
 		return res;
+	}
+
+	@Override
+	public void add_chapter(Chapter chapter) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
+		session.save(chapter);
+		session.close();
 	}
 
 }
