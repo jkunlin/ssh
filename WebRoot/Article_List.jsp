@@ -64,7 +64,6 @@
 			</header>
 			<section class="ib-container" id="ib-container">
 			<s:iterator value="#request.article_list" id = "article" status="st">
-			<s:a target="_blank" href="showArticle.action?article_id=%{#artile[0]}">a</s:a>
 				<article>
 					<input type="text" id="article_id${st.index}" style="display:none;" value="${article[0]}">
 					<header>

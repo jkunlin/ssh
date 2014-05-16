@@ -1,3 +1,5 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -331,15 +333,25 @@ $(function(){
     </nav>
   </div>
 	
-<select id="select"  style="width:300px;float:right">
+<select id="select"  style="width:300px;float:right" onchange="self.location.href=options[selectedIndex].value">
+	<s:iterator value="#request.chapter_list" id = "chapter" status="st">
+		<option value="showArticle.action?article_id=${article_id}&chapter_id=${chapter[0]}"
+			 <s:if test="%{#chapter[0] == chapter_id}">selected="true"</s:if>
+		>
+			第<s:property value="1+#st.index"></s:property>章：<s:property value="#chapter[1]"></s:property>
+		</option>
+	</s:iterator>
+	<!-- 
 	<option value ="volvo">第一章：世界和平</option>
 	<option value ="saab">第二章：我在这里</option>
 	<option value="opel">第三章：放逐</option>
 	<option value="audi">第四章：解放</option>
-<select>
+	 -->
+</select>
 <div class="banner" id="kakaFocus"> 
 	<a class="btn_prev" title="上一个" href="#">Previous</a> 
-	<a class="btn_next" title="下一个" href="#">Next</a> 
+	<a class="btn_next" title="下一个" href="#">Next</a>
+	
 	<div class="banner_pic"> 
 		<ul>
 			<li><a href="#"><img width="630" height="210" src="images/pic_01.jpg" alt="" /></a></li> 

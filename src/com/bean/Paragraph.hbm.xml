@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bean.Paragraph" table="paragraph" catalog="storyfm">
+		<id name="paragraph_id" type="java.lang.Integer">
+			<column name="paragraph_id"></column>
+			<generator class="identity"></generator>
+		</id>
+		<property name="sequence" type="java.lang.Integer">
+			<column name="sequence" not-null="true"></column>
+		</property>
+		<property name="content" type="java.lang.String">
+			<column name="content" length="500" not-null="false"></column>
+		</property>
+		
+		<many-to-one name="chapter" class="com.bean.Chapter" 
+		column="chapter_id" not-null="true" cascade="all"></many-to-one>
+		
+	</class>
+</hibernate-mapping>

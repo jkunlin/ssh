@@ -18,7 +18,11 @@ public interface JournalDAO {
 	
 	@SuppressWarnings("rawtypes")
 	public List find_article_of_journal(Integer journal_id);
+
+	@SuppressWarnings("rawtypes")
+	public List find_chapter_of_article(Integer article_id);
 	
+	//no use
 	public Integer find_first_journal_id();
 	
 	public void add_chapter(Chapter chapter);

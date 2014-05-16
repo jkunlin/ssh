@@ -30,6 +30,7 @@
 				<value>com/bean/Journal.hbm.xml</value>
 				<value>com/bean/Article.hbm.xml</value>
 				<value>com/bean/Chapter.hbm.xml</value>
+				<value>com/bean/Paragraph.hbm.xml</value>
 				
 			</list>
 			 

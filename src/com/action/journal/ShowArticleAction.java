@@ -1,5 +1,9 @@
 package com.action.journal;
 
+import java.util.List;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.JournalService;
 
@@ -30,10 +34,15 @@ public class ShowArticleAction extends ActionSupport {
 		this.chapter_id = chapter_id;
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
+		Map request = (Map) ActionContext.getContext().get("request");
 		System.out.println(article_id);
+		System.out.println(chapter_id);
+		List chapter_list = service.find_chapter_of_article(article_id);
+		request.put("chapter_list", chapter_list);
 		return SUCCESS;
 	}
 	

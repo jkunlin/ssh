@@ -17,5 +17,10 @@
 		
 		<many-to-one name="article" class="com.bean.Article" 
 		column="article_id" not-null="true" cascade="all"></many-to-one>
+		
+		<set name="paragraphs" inverse="true" cascade="all">
+			<key column="chapter_id"></key>
+			<one-to-many class="com.bean.Paragraph"></one-to-many>
+		</set>
 	</class>
 </hibernate-mapping>

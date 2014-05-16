@@ -33,6 +33,12 @@ public class JournalServiceImpl implements JournalService {
 		return journalDAO.find_article_of_journal(journal_id);
 	}
 
+	@SuppressWarnings("rawtypes")
+	@Override
+	public List find_chapter_of_article(Integer article_id) {
+		return journalDAO.find_chapter_of_article(article_id);
+	}
+	
 	@Override
 	public Integer find_first_journal_id() {
 		return journalDAO.find_first_journal_id();
@@ -72,6 +78,8 @@ public class JournalServiceImpl implements JournalService {
 		journalDAO.update_article(article_id, article_title, article_outline);
 		
 	}
+
+	
 
 	
 	

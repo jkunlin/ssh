@@ -1,10 +1,14 @@
 package com.bean;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Chapter {
 	private Article article;
 	private Integer chapter_id;
 	private String title;
 	private Integer sequence;
+	private Set<Paragraph> paragraphs = new HashSet<Paragraph>();
 	
 	public Article getArticle() {
 		return article;
@@ -31,6 +35,12 @@ public class Chapter {
 	}
 	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
+	}
+	public Set<Paragraph> getParagraphs() {
+		return paragraphs;
+	}
+	public void setParagraphs(Set<Paragraph> paragraphs) {
+		this.paragraphs = paragraphs;
 	}
 	
 	

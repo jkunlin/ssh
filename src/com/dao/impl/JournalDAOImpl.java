@@ -6,7 +6,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.bean.Article;
 import com.bean.Chapter;
 import com.dao.JournalDAO;
 
@@ -39,17 +38,27 @@ public class JournalDAOImpl implements JournalDAO {
 		return res;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes" })
 	@Override
 	public List find_article_of_journal(Integer journal_id) {
 		Session session = sessionFactory.openSession();
 		String hql = "select article_id, title, outline from Article article where article.journal.journal_id = " + journal_id;
-		List<Article> res = session.createQuery(hql).list();
+		List res = session.createQuery(hql).list();
 		session.close();
 		return res;
 		//String hql = "from Article  article where article.journal.journal_id = " + journal_id;
 	}
 
+	@SuppressWarnings("rawtypes")
+	@Override
+	public List find_chapter_of_article(Integer article_id) {
+		Session session = sessionFactory.openSession();
+		String hql = "select chapter_id, title from Chapter chapter where article_id = " + article_id;
+		List res = session.createQuery(hql).list();
+		session.close();
+		return res;
+	}
+	
 	@Override
 	public Integer find_first_journal_id() {
 		Session session = sessionFactory.openSession();
@@ -58,6 +67,7 @@ public class JournalDAOImpl implements JournalDAO {
 		query.setFirstResult(0);
 		query.setMaxResults(1);
 		Integer res = (Integer)query.list().get(0);
+		session.close();
 		return res;
 	}
 
@@ -90,5 +100,7 @@ public class JournalDAOImpl implements JournalDAO {
 		query.executeUpdate();
 		session.close();
 	}
+
+	
 
 }
