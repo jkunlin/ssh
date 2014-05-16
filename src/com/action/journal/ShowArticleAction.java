@@ -38,11 +38,20 @@ public class ShowArticleAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
+		
+		
+		
 		Map request = (Map) ActionContext.getContext().get("request");
 		System.out.println(article_id);
 		System.out.println(chapter_id);
 		List chapter_list = service.find_chapter_of_article(article_id);
 		request.put("chapter_list", chapter_list);
+		
+		if(chapter_id == null) {
+			chapter_id = (Integer)((Object[])chapter_list.get(0))[0];
+		}
+		service.find_paragraph_of_article(chapter_id);
+		
 		return SUCCESS;
 	}
 	

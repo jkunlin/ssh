@@ -59,6 +59,38 @@ public class JournalDAOImpl implements JournalDAO {
 		return res;
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+	public List find_paragraph_of_chapter(Integer chapter_id) {
+		Session session = sessionFactory.openSession();
+		List res = null;
+		List tmp = null;
+		String hql = "select max(sequence) from Paragraph paragraph where chapter_id = " + chapter_id;
+		Query query = session.createQuery(hql);
+		Integer max_sequence = (Integer)query.uniqueResult();
+		
+		hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = 0";
+		query = session.createQuery(hql);
+		query.setInteger("chapter_id", chapter_id);
+		query.setFirstResult(0);
+		query.setMaxResults(5);
+		res = query.list();
+		for (int i = 1; i <= max_sequence; ++i) {
+			hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = :sequence";
+			query = session.createQuery(hql);
+			query.setInteger("chapter_id", chapter_id);
+			query.setInteger("sequence", i);
+			query.setFirstResult(0);
+			query.setMaxResults(5);
+			tmp = query.list();
+			if (!tmp.isEmpty()) {
+				res.addAll(tmp);
+			}
+		}
+		session.close();
+		return res;
+	}
+	
 	@Override
 	public Integer find_first_journal_id() {
 		Session session = sessionFactory.openSession();
@@ -100,6 +132,8 @@ public class JournalDAOImpl implements JournalDAO {
 		query.executeUpdate();
 		session.close();
 	}
+
+	
 
 	
 

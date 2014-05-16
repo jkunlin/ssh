@@ -12,6 +12,8 @@ public interface JournalService {
 	public List find_article_of_journal(Integer journal_id);
 	@SuppressWarnings("rawtypes")
 	public List find_chapter_of_article(Integer article_id);
+	@SuppressWarnings("rawtypes")
+	public List find_paragraph_of_article(Integer chapter_id);
 	public void add_journal(String journal_title, List<String> articles_title,
 			List<String> articles_outline, List<String> chapters_title);
 	public void delete_journal(Integer journal_id);

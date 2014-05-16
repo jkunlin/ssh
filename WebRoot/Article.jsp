@@ -267,10 +267,10 @@ $(function(){
 			<h3>笔记</h3>
 			<table width="290px" border="0">
 				<tr>
-					<textarea id="note" cols="40" rows="18" style="overflow: auto;"></textarea>
+					<textarea id="note" cols="40" rows="18" style="overflow: auto;"></textarea><!--笔记的textarea在这里的-->
 				<tr>
 				<tr>
-					<td><input id="buttonn" type="submit" class="button" style="width:150px" value="保存笔记"/></td>
+					<td><input id="buttonn" type="submit" class="button" style="width:150px" value="保存笔记"/></td><!--笔记的提交按钮在这里的-->
 					<td>
 						<div style="vertical-align: bottom; height: 20px; line-height: 20px; margin: 0px;color: Gray;">
 							<label id="info2n" style="float: right; font-size: 12px;">个字</label>
@@ -282,7 +282,7 @@ $(function(){
 			</table>
 		</div>
 	</div>
-	
+	<!--直接搜索外链不用管-->
 	<div class="float-open" id="float-open2" style="left:-2px; top:480px;background:url(images/search.png) no-repeat;background-size:90% 90%;background-position:center;"><a class="open-btn" id="open-btn2" href="javascript:void(0);">&gt;</a></div>
 	<div class="float-news" id="float-news2" style="left:-450px; top:430px; width:320px;height:175px">
 		<a class="float-close" id="float-close2" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:void(0);">X</a>
@@ -310,6 +310,7 @@ $(function(){
 			</ul>
 		</div>
 	</div>
+	<!--以上是直接搜索外链不用管-->
 </div> <!-- weiduduan End -->
 
 
@@ -360,7 +361,7 @@ $(function(){
 			<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
 			<li>
-				<div class="cTextArea0" width="630" height="210"/>
+				<div class="cTextArea0" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>
 		</ul> 
 	</div>
@@ -408,7 +409,7 @@ $(function(){
 			<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
 			<li>
-				<div class="cTextArea1" width="630" height="210"/>
+				<div class="cTextArea1" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>
 		</ul> 
 	</div>
@@ -455,7 +456,7 @@ $(function(){
 			<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
 			<li>
-				<div class="cTextArea2" width="630" height="210"/>
+				<div class="cTextArea2" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>		
 		</ul> 
 	</div>
@@ -502,7 +503,7 @@ $(function(){
 			<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
 			<li>
-				<div class="cTextArea3" width="630" height="210"/>
+				<div class="cTextArea3" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>	
 		</ul> 
 	</div>
@@ -548,7 +549,7 @@ $(function(){
 					<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
 					<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
 					<li>
-						<div class="cTextArea4" width="630" height="210"/>
+						<div class="cTextArea4" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 					</li>	
 				</ul> 
 			</div>

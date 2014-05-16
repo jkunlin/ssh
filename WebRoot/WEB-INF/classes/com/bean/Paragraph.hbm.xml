@@ -14,6 +14,12 @@
 		<property name="content" type="java.lang.String">
 			<column name="content" length="500" not-null="false"></column>
 		</property>
+		<property name="score" type="java.lang.Double">
+			<column name="score" not-null="false"></column>
+		</property>
+		<property name="score_num" type="java.lang.Integer">
+			<column name="score_num" not-null="false"></column>
+		</property>
 		
 		<many-to-one name="chapter" class="com.bean.Chapter" 
 		column="chapter_id" not-null="true" cascade="all"></many-to-one>
