@@ -24,6 +24,8 @@ public interface JournalDAO {
 	public void add_chapter(Chapter chapter);
 	
 	public void delete_journal(Integer journal_id);
+	
+	public void update_article(Integer article_id, String article_title, String article_outline);
 
 //	public void update_journal(Journal journal);
 }

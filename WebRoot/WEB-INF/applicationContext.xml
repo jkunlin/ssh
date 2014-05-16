@@ -83,6 +83,16 @@
 			<ref bean="journalService"></ref>
 		</property>
 	</bean>
+	<bean id="editJournalAction" class="com.action.journal.EditJournalAction" scope="prototype">
+		<property name="service">
+			<ref bean="journalService"></ref>
+		</property>
+	</bean>
+	<bean id="showArticleAction" class="com.action.journal.ShowArticleAction" scope="prototype">
+		<property name="service">
+			<ref bean="journalService"></ref>
+		</property>
+	</bean>
 	<!-- 
 	<bean id="userManage" class="dao.UserManage" abstract="false" lazy-init="default"
 		autowire="default" dependency-check="default">

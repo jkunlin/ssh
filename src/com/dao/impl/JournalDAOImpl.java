@@ -75,6 +75,20 @@ public class JournalDAOImpl implements JournalDAO {
 		String hql = "delete from Journal journal where journal_id = " + journal_id;
 		Query query = session.createQuery(hql);
 		query.executeUpdate();
+		session.close();
+	}
+
+	@Override
+	public void update_article(Integer article_id, String article_title,
+			String article_outline) {
+		Session session = sessionFactory.openSession();
+		String hql = "update Article article set article.title = :article_title, article.outline = :article_outline where article.article_id = :article_id";
+		Query query = session.createQuery(hql);
+		query.setString("article_title", article_title);
+		query.setString("article_outline", article_outline);
+		query.setInteger("article_id", article_id);
+		query.executeUpdate();
+		session.close();
 	}
 
 }

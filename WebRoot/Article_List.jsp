@@ -63,15 +63,25 @@
 				<h2>Using Box Shadows, Transform and Transitions</h2>
 			</header>
 			<section class="ib-container" id="ib-container">
-			<s:iterator value="#request.article_list" id = "article">
+			<s:iterator value="#request.article_list" id = "article" status="st">
+			<s:a target="_blank" href="showArticle.action?article_id=%{#artile[0]}">a</s:a>
 				<article>
+					<input type="text" id="article_id${st.index}" style="display:none;" value="${article[0]}">
 					<header>
-						<h3><s:a target="_blank" href="http://tympanus.net/codrops/2011/12/08/25-examples-of-perfect-color-combinations-in-web-design/">
-								<s:property value="#article[1]"/>
-						</s:a></h3>
+						<h3>
+							<s:a target="_blank" href="showArticle.action?article_id=%{#article[0]}">
+								<div id="article_title${st.index}">	
+									<s:property value="#article[1]"/>
+								</div>
+							</s:a>
+						</h3>
 						<span>December 8, 2011 by Gisele Muller</span>
 					</header>
-					<p><s:property value="#article[2]"/></p>
+					<p>
+						<div id="article_content${st.index}">
+							<s:property value="#article[2]"/>
+						</div>	
+					</p>
 				</article>
 			</s:iterator>
 
@@ -168,31 +178,31 @@
 		<!--编辑文章标题简介窗口-->
 		<div class="float-news" id="float-edit-windows" style="left:-450px; top:75px; width:280px;height:525px">
 			<a class="float-close" id="float-close" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:menu_close('float-edit-windows','float-new')">X</a>
-			<input id="article_id" style="display:none"  value=""/><!--放文章编号-->
-			<input id="chapter_number" style="display:none"  value=""/><!--放文章章节数-->
-			<div class="newslist">
-				<h3>文章详情</h3>
-				<table>
-					<tr>
-						<td>标题：<input id="article_edit_title" type="text" style="width:200px"></td>
-					</tr>
-					<tr>
-						<td>描述：</td>
-					</tr>
-					<tr>
-						<td align="right"><textarea id="article_edit_content" rows="3" cols="30"></textarea><td>
-					</tr>
-					<tr>
-						<td>章列表</td>
-					</tr>
-					<td>
-					<div id="new-edit-joural-html"/>
-					</td>
-					<tr>
-						<td align="right"><input class="submit" type="button" value="确定" onclick="javascript:save_article()"></td>
-					</tr>
-				</table>
-			</div>
+				<input id="article_id" style="display:none"  value=""/><!--放文章编号-->
+				<input id="chapter_number" style="display:none"  value=""/><!--放文章章节数-->
+				<div class="newslist">
+					<h3>文章详情</h3>
+					<table>
+						<tr>
+							<td>标题：<input id="article_edit_title" type="text" style="width:200px"></td>
+						</tr>
+						<tr>
+							<td>描述：</td>
+						</tr>
+						<tr>
+							<td align="right"><textarea id="article_edit_content" rows="3" cols="30"></textarea><td>
+						</tr>
+						<tr>
+							<td>章列表</td>
+						</tr>
+						<td>
+						<div id="new-edit-joural-html"/>
+						</td>
+						<tr>
+							<td align="right"><input class="submit" type="button" value="确定" onclick="javascript:save_article()"></td>
+						</tr>
+					</table>
+				</div>
 		</div>
 		
 		
@@ -200,9 +210,9 @@
 		
 		
 		<!--编辑杂志菜单-->
-		<div class="float-news" id="float-edit" style="left:-600px; top:100px; width:240px;height:450px">
+		<div class="float-news" id="float-edit" style="left:-600px; top:100px; width:400px;height:450px">
 			<!--需要设置当前文章数-->
-			<input id="current_article_number" style="display:none" value="8"/>
+			<input id="current_article_number" style="display:none" value="${request.article_list.size()}"/>
 			<a class="float-close" id="float-close-edit" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:void(0);">X</a>
 			<div class="newslist">
 				<h3>编辑文章信息</h3>
@@ -214,24 +224,15 @@
 		<!--编辑文章信息-->
 		<div class="float-news" id="float-edit-article" style="left:-450px; top:225px; width:280px;height:200px">
 			<a class="float-close" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:menu_close('float-edit-article','float-edit')">X</a>
-			<input id="current_article_index" style="display:none"  value=""/>
-			<div class="newslist">
-				<h3>文章详情</h3>
-				<table>
-					<tr>
-						<td>标题：<input id="edit_article_title" type="text" style="width:200px"></td>
-					</tr>
-					<tr>
-						<td>描述：</td>
-					</tr>
-					<tr>
-						<td align="right"><textarea id="edit_article_content" rows="3" cols="33"></textarea><td>
-					</tr>
-					<tr>
-						<td align="right"><input class="submit" type="button" value="确定" onclick="javascript:save_article()"></td>
-					</tr>
-				</table>
-			</div>
+			<s:form action="editJournal" id="edit-journal-form">
+				<input name="journal_id" style="display:none;" value="${request.journal_id}">
+				<input id="current_article_index" style="display:none"  value=""/>
+				<div class="newslist">
+					<h3>文章详情</h3>
+					<input name="article_id" id="current_article_id" style="display:none" value=""/><!--在数据库中的文章id-->
+					<div id="edit-Article-imf"/><!--用于生成文章信息-->
+				</div>
+			</s:form>
 		</div>
 		
 		

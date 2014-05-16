@@ -53,7 +53,7 @@
 function menu_open(id0,id1){
 //关闭id0 打开id1
 	$('#'+id0).animate({
-		left: '-300px'
+		left: '-900px'
 	}, 100, function(){
 		$('#'+id1).delay(50).animate({
 			left: '0px'
@@ -138,12 +138,14 @@ function newEditeJournalListHTMLmaker(ChapterNumber){
 }
 function newEditArticleListHTMLmaker(){
 	var arr=new Array();
+	var title;//文章的标题
 	articleNumber=parseInt(document.getElementById("current_article_number").value)
 	arr.push('<ul>');	
 	for (var i=1;i<articleNumber+1;i++){
-		arr.push('<li><a href="javascript:edit_article_ifm('+i+')"><div id="eidt'+i+'">'+i+' 点击编辑</div><a/>');
-		arr.push('<input id="edittitle'+i+'" style="display:none" type="text" value=""/>');
-		arr.push('<input id="editcontent'+i+'" style="display:none" type="text" value=""/>');
+		title=document.getElementById("article_title"+(i-1)).innerText;
+		if (title.length>40)
+			title=title.substring(0,40)+"..."
+		arr.push('<li><a href="javascript:edit_article_ifm('+i+')"><div id="eidt'+i+'">'+i+' '+title+'</div></a>');
 	}
 	arr.push('</ul>');
 	document.getElementById("edit-Article-html").innerHTML = arr.join(' ');
@@ -151,6 +153,17 @@ function newEditArticleListHTMLmaker(){
 
 function edit_article_ifm(id){
 	document.getElementById("current_article_index").value = id;//保存文章号
+	var arr=new Array();
+	var aid=document.getElementById("article_id"+(id-1)).value;//文章在数据库中的id
+	var title=document.getElementById("article_title"+(id-1)).innerText;//文章的标题
+	var content=document.getElementById("article_content"+(id-1)).innerText;//文章的简介
+	document.getElementById("current_article_id").value=aid;//设置文章在数据库中的id
+	arr.push('<table><tr><td>标题：<input name="article_title" id="edit_article_title" type="text" style="width:200px" value="'+title+'"></td></tr>');
+	arr.push('<tr><td>描述：</td></tr>');
+	arr.push('<tr><td align="right"><textarea name="article_outline" id="edit_article_content" rows="3" cols="33">'+content+'</textarea><td></tr>');
+	arr.push('<tr><td align="right"><input class="submit" type="submit" value="确定" onclick=""></td></tr></table>');//提交按钮
+	arr.join(' ');
+	document.getElementById("edit-Article-imf").innerHTML = arr.join(' ');
 	menu_open('float-edit','float-edit-article');//打开编辑窗口
 }
 

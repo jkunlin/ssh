@@ -29,5 +29,11 @@
 		<action name="deleteJournal" class="deleteJournalAction">
 			<result name="success" type="redirect">listJournal.action</result>
 		</action>
+		<action name="editJournal" class="editJournalAction">
+			<result name="success" type="redirect">listJournal.action?journal_id=${journal_id}</result>
+		</action>
+		<action name="showArticle" class="showArticleAction">
+			<result name="success">Article.jsp</result>
+		</action>
 	</package>
 </struts>    

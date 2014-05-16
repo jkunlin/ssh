@@ -66,6 +66,13 @@ public class JournalServiceImpl implements JournalService {
 		
 	}
 
+	@Override
+	public void update_article(Integer article_id, String article_title,
+			String article_outline) {
+		journalDAO.update_article(article_id, article_title, article_outline);
+		
+	}
+
 	
 	
 	
