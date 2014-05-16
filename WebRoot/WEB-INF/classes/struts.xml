@@ -26,5 +26,8 @@
 		<action name="addJournal" class="addJournalAction">
 			<result name="success" type="redirect">listJournal.action</result>
 		</action>
+		<action name="deleteJournal" class="deleteJournalAction">
+			<result name="success" type="redirect">listJournal.action</result>
+		</action>
 	</package>
 </struts>    

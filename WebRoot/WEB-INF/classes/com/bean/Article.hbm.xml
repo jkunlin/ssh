@@ -16,7 +16,7 @@
 		</property>
 		<many-to-one name="journal" class="com.bean.Journal" 
 		column="journal_id" not-null="true" cascade="all"></many-to-one>
-		<set name="chapters" inverse="true">
+		<set name="chapters" inverse="true" cascade="all">
 			<key column="article_id"></key>
 			<one-to-many class="com.bean.Chapter"></one-to-many>
 		</set>

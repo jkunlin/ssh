@@ -248,7 +248,9 @@
 						<td align="center"><h4>确定删除当前杂志？<h4></td>
 					</tr>
 					<tr>
-						<td align="center"><input class="submit" type="submit" value="确定"></td>
+						<td align="center">
+							<s:a href="deleteJournal.action?journal_id=%{#request.journal_id}"><input class="submit" type="button" value="确定"> </s:a>
+						</td>
 					</tr>
 				</table>
 			</div>

@@ -69,4 +69,12 @@ public class JournalDAOImpl implements JournalDAO {
 		session.close();
 	}
 
+	@Override
+	public void delete_journal(Integer journal_id) {
+		Session session = sessionFactory.openSession();
+		String hql = "delete from Journal journal where journal_id = " + journal_id;
+		Query query = session.createQuery(hql);
+		query.executeUpdate();
+	}
+
 }

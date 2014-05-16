@@ -43,19 +43,26 @@ public class JournalServiceImpl implements JournalService {
 			List<String> articles_outline, List<String> chapters_title) {
 		Journal journal = new Journal();
 		journal.setJournal_title(journal_title);
+		int cur_chapter_title_index = 0;
 		for (int i = 0; i < articles_title.size(); ++i) {
 			Article article = new Article();
 			article.setJournal(journal);
 			article.setTitle(articles_title.get(i));
 			article.setOutline(articles_outline.get(i));
-			for (int j = 0; j < chapters_title.size() / articles_title.size(); ++j) {
+			for (int j = 0; j < chapters_title.size() / articles_title.size(); ++j, ++cur_chapter_title_index) {
 				Chapter chapter = new Chapter();
 				chapter.setArticle(article);
-				chapter.setTitle(chapters_title.get(j));
+				chapter.setTitle(chapters_title.get(cur_chapter_title_index));
 				chapter.setSequence(j);
 				journalDAO.add_chapter(chapter);
 			}
 		}
+		
+	}
+
+	@Override
+	public void delete_journal(Integer journal_id) {
+		journalDAO.delete_journal(journal_id);
 		
 	}
 

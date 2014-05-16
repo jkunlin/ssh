@@ -78,6 +78,11 @@
 			<ref bean="journalService"></ref>
 		</property>
 	</bean>
+	<bean id="deleteJournalAction" class="com.action.journal.DeleteJournalAction" scope="prototype">
+		<property name="service">
+			<ref bean="journalService"></ref>
+		</property>
+	</bean>
 	<!-- 
 	<bean id="userManage" class="dao.UserManage" abstract="false" lazy-init="default"
 		autowire="default" dependency-check="default">
