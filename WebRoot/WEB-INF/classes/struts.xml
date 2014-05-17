@@ -35,5 +35,8 @@
 		<action name="showArticle" class="showArticleAction">
 			<result name="success">Article.jsp</result>
 		</action>
+		<action name="addParagraph" class="addParagraphAction">
+			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
+		</action>
 	</package>
 </struts>    

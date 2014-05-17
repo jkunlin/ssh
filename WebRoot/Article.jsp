@@ -314,6 +314,8 @@ $(function(){
 </div> <!-- weiduduan End -->
 
 
+<input id="addParagraph_article_id" type="text" style="display:none; " value="${article_id}">
+<input id="addParagraph_chapter_id" type="text" style="display:none;" value="${chapter_id}">
 
 <div class="wrapper">
   <section id="home">
@@ -349,6 +351,10 @@ $(function(){
 	<option value="audi">第四章：解放</option>
 	 -->
 </select>
+
+<input name="article_id" value="#article_id" style="display:none;">
+<s:set name="chapter_id" value="#chapter_id"></s:set>
+
 <div class="banner" id="kakaFocus"> 
 	<a class="btn_prev" title="上一个" href="#">Previous</a> 
 	<a class="btn_next" title="下一个" href="#">Next</a>
@@ -358,6 +364,14 @@ $(function(){
 			<s:iterator value="#request.paragraph_list.get(0)" id="paragraph" status="st">
 				<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 			</s:iterator>
+			<s:bean name="org.apache.struts2.util.Counter" id="counter">
+			   <s:param name="first" value="#request.paragraph_list.get(0).size() + 1" />
+			   <s:param name="last" value="5" />
+			   <s:iterator>
+			     <li><a href="#"><img width="630" height="210" src="images/pic_0<s:property/>.jpg" alt="" /></a></li>
+			   </s:iterator>
+			</s:bean>
+			
 			<!-- 
 			<li><a href="#"><img width="630" height="210" src="images/pic_01x.jpg" alt="<s:property value="#request.paragraph_list.get(0)[0].content"/>" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_02x.jpg" alt="<s:property value="#request.paragraph_list.get(0)[1].content"/>" /></a></li> 
@@ -409,8 +423,33 @@ $(function(){
 	<div class="banner_pic"> 
 		<ul>
 			<s:iterator value="#request.paragraph_list.get(1)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
+				<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 			</s:iterator>
+			<s:bean name="org.apache.struts2.util.Counter" id="counter">
+			   <s:param name="first" value="#request.paragraph_list.get(1).size() + 1" />
+			   <s:param name="last" value="5" />
+			   <s:iterator>
+			     <li><a href="#"><img width="630" height="210" src="images/pic_0<s:property/>.jpg" alt="" /></a></li>
+			   </s:iterator>
+			</s:bean>
+			
+			<!-- 
+			<s:if test="%{#request.paragraph_list.get(1).size() < 1}">
+				<li><a href="#"><img width="630" height="210" src="images/pic_01.jpg" alt="" /></a></li>
+			</s:if>
+			<s:if test="%{#request.paragraph_list.get(1).size() < 2}">
+				<li><a href="#"><img width="630" height="210" src="images/pic_02.jpg" alt="" /></a></li>
+			</s:if>
+			<s:if test="%{#request.paragraph_list.get(1).size() < 3}">
+				<li><a href="#"><img width="630" height="210" src="images/pic_03.jpg" alt="" /></a></li>
+			</s:if>
+			<s:if test="%{#request.paragraph_list.get(1).size() < 4}">
+				<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li>
+			</s:if>
+			<s:if test="%{#request.paragraph_list.get(1).size() < 5}">
+				<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li>
+			</s:if>
+			 -->
 			<li>
 				<div class="cTextArea1" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>
@@ -456,6 +495,13 @@ $(function(){
 			<s:iterator value="#request.paragraph_list.get(2)" id="paragraph" status="st">
 				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 			</s:iterator>
+			<s:bean name="org.apache.struts2.util.Counter" id="counter">
+			   <s:param name="first" value="#request.paragraph_list.get(2).size() + 1" />
+			   <s:param name="last" value="5" />
+			   <s:iterator>
+			     <li><a href="#"><img width="630" height="210" src="images/pic_0<s:property/>.jpg" alt="" /></a></li>
+			   </s:iterator>
+			</s:bean>
 			<li>
 				<div class="cTextArea2" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>		
@@ -504,6 +550,13 @@ $(function(){
 			<s:iterator value="#request.paragraph_list.get(3)" id="paragraph" status="st">
 				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 			</s:iterator> 
+			<s:bean name="org.apache.struts2.util.Counter" id="counter">
+			   <s:param name="first" value="#request.paragraph_list.get(3).size() + 1" />
+			   <s:param name="last" value="5" />
+			   <s:iterator>
+			     <li><a href="#"><img width="630" height="210" src="images/pic_0<s:property/>.jpg" alt="" /></a></li>
+			   </s:iterator>
+			</s:bean>
 			<li>
 				<div class="cTextArea3" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>	
@@ -548,6 +601,13 @@ $(function(){
 					<s:iterator value="#request.paragraph_list.get(4)" id="paragraph" status="st">
 						<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 					</s:iterator>
+					<s:bean name="org.apache.struts2.util.Counter" id="counter">
+					   <s:param name="first" value="#request.paragraph_list.get(4).size() + 1" />
+					   <s:param name="last" value="5" />
+					   <s:iterator>
+					     <li><a href="#"><img width="630" height="210" src="images/pic_0<s:property/>.jpg" alt="" /></a></li>
+					   </s:iterator>
+					</s:bean>
 					<li>
 						<div class="cTextArea4" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 					</li>	

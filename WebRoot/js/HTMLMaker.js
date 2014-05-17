@@ -31,8 +31,11 @@ function starHTMLMakerGrounp(potition,id0,number){
 function countTextAreaMaker(potitionId,id0){
 	var arr=new Array();
 	var o=$('.'+potitionId);
-	arr.push('<form id="gogogo"><table width="630" border="0">');//"我的看法"的表单开始
-	arr.push('<tr><textarea id="content'+id0+'" cols="85" rows="11" style="overflow: auto;"></textarea><tr>');
+	arr.push('<form action="addParagraph" id="gogogo"><table width="630" border="0">');//"我的看法"的表单开始
+	arr.push('<input type="text" name="sequence" style="display:none;" value="'+id0+'">');
+	arr.push('<input type="text" name="article_id" style="display:none;" value="'+document.getElementById("addParagraph_article_id").attributes["value"].value+'">');
+	arr.push('<input type="text" name="chapter_id" style="display:none;" value="'+document.getElementById("addParagraph_chapter_id").attributes["value"].value+'">');
+	arr.push('<tr><textarea name="content" id="content'+id0+'" cols="85" rows="11" style="overflow: auto;"></textarea><tr>');
 	arr.push('<tr><td><input id="button'+id0+'" type="submit" class="button" value="终于写好啦！提交" /></td>');//"我的看法"的提交按钮在这个地方的！
 	arr.push('<td><div style="vertical-align: bottom; height: 20px; line-height: 20px; margin: 0px;color: Gray;">');
 	arr.push('<label id="info2'+id0+'" style="float: right; font-size: 12px;">个字</label>');
