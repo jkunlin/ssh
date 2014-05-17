@@ -355,16 +355,11 @@ $(function(){
 	
 	<div class="banner_pic"> 
 		<ul>
-			<s:iterator value="#request.paragraph_list.get(0)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
-			</s:iterator>
-			<!-- 
-			<li><a href="#"><img width="630" height="210" src="images/pic_01x.jpg" alt="<s:property value="#request.paragraph_list.get(0)[0].content"/>" /></a></li> 
-			<li><a href="#"><img width="630" height="210" src="images/pic_02x.jpg" alt="<s:property value="#request.paragraph_list.get(0)[1].content"/>" /></a></li> 
+			<li><a href="#"><img width="630" height="210" src="images/pic_01.jpg" alt="" /></a></li> 
+			<li><a href="#"><img width="630" height="210" src="images/pic_02.jpg" alt="" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_03.jpg" alt="" /></a></li> 
 			<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
-			<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li>
-			 --> 
+			<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
 			<li>
 				<div class="cTextArea0" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
 			</li>
@@ -373,7 +368,7 @@ $(function(){
 	<div class="banner_info">
 		<ul>
 			<li>
-				<h4><a href="#">快乐的旅程，参观武汉可口可乐饮料有限公司</a></h4>
+				<h4><a href="#">快乐我的旅程，参观武汉可口可乐饮料有限公司</a></h4>
 				<div class="ext" id="starInfo00"/>
 			</li>
 			<li>
@@ -402,188 +397,50 @@ $(function(){
 </div><!--banner end-->
 
   </section>
-  <section id="about">
-<div class="banner" id="kakaFocus2"> 
-	<a class="btn_prev" title="上一个" href="#">Previous</a> 
-	<a class="btn_next" title="下一个" href="#">Next</a> 
-	<div class="banner_pic"> 
-		<ul>
-			<s:iterator value="#request.paragraph_list.get(1)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
-			</s:iterator>
-			<li>
-				<div class="cTextArea1" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
-			</li>
-		</ul> 
-	</div>
-	<div class="banner_info">
-		<ul>
-			<li>
-				<h4><a href="#">快乐的旅程，参观武汉可口可乐饮料有限公司</a></h4>
-				<div class="ext" id="starInfo10"/>
-			</li>
-			<li>
-				<h4><a href="#">巧口英语“力推”Club活动——？</a></h4>
-				<div class="ext" id="starInfo11"/>
-			</li>
-			<li>
-				<h4><a href="#">想学音乐应从什么时候开始？</a></h4>
-				<div class="ext" id="starInfo12"/>
-			</li>
-			<li>
-				<h4><a href="#">关于草原情全国小记者选拔赛通知。</a></h4>
-				<div class="ext" id="starInfo13"/>
-			</li>
-			<li>
-				<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-				<div class="ext" id="starInfo14"/>
-			</li>
-			<li>
-				<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-				<div class="ext" id="starInfo15"/>
-			</li>
-		</ul>
-	</div>
-	<div class="banner_count">1</div>
-</div><!--banner end-->
-  </section>
-  <section id="shortcodes">
-<div class="banner" id="kakaFocus3"> 
-	<a class="btn_prev" title="上一个" href="#">Previous</a> 
-	<a class="btn_next" title="下一个" href="#">Next</a> 
-	<div class="banner_pic"> 
-		<ul>
-			<s:iterator value="#request.paragraph_list.get(2)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
-			</s:iterator>
-			<li>
-				<div class="cTextArea2" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
-			</li>		
-		</ul> 
-	</div>
-	<div class="banner_info">
-		<ul>
-			<li>
-				<h4><a href="#">快乐的旅程，参观武汉可口可乐饮料有限公司</a></h4>
-				<div class="ext" id="starInfo20"/>
-			</li>
-			<li>
-				<h4><a href="#">巧口英语“力推”Club活动——？</a></h4>
-				<div class="ext" id="starInfo21"/>
-			</li>
-			<li>
-				<h4><a href="#">想学音乐应从什么时候开始？</a></h4>
-				<div class="ext" id="starInfo22"/>
-			</li>
-			<li>
-				<h4><a href="#">关于草原情全国小记者选拔赛通知。</a></h4>
-				<div class="ext" id="starInfo23"/>
-			</li>
-			<li>
-				<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-				<div class="ext" id="starInfo24"/>
-			</li>
-			<li>
-				<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-				<div class="ext" id="starInfo25"/>
-			</li>
-		</ul>
-	</div>
-	<div class="banner_count">1</div>
-</div><!--banner end--> 
-  </section>
   
-  
-  
-  <section id="gallery">
-<div class="banner" id="kakaFocus4"> 
-	<a class="btn_prev" title="上一个" href="#">Previous</a> 
-	<a class="btn_next" title="下一个" href="#">Next</a> 
-	<div class="banner_pic"> 
-		<ul>
-			<s:iterator value="#request.paragraph_list.get(3)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
-			</s:iterator> 
-			<li>
-				<div class="cTextArea3" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
-			</li>	
-		</ul> 
-	</div>
-	<div class="banner_info">
-		<ul>
-			<li>
-				<h4><a href="#">快乐的旅程，参观武汉可口可乐饮料有限公司</a></h4>
-				<div class="ext" id="starInfo30"/>
-			</li>
-			<li>
-				<h4><a href="#">巧口英语“力推”Club活动——？</a></h4>
-				<div class="ext" id="starInfo31"/>
-			</li>
-			<li>
-				<h4><a href="#">想学音乐应从什么时候开始？</a></h4>
-				<div class="ext" id="starInfo32"/>
-			</li>
-			<li>
-				<h4><a href="#">关于草原情全国小记者选拔赛通知。</a></h4>
-				<div class="ext" id="starInfo33"/>
-			</li>
-			<li>
-				<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-				<div class="ext" id="starInfo34"/>
-			</li>
-			<li>
-				<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-				<div class="ext" id="starInfo35"/>
-			</li>
-		</ul>
-	</div>
-	<div class="banner_count">1</div>
-</div><!--banner end-->
-	
-		<div class="banner" id="kakaFocus5"> 
-			<a class="btn_prev" title="上一个" href="#">Previous</a> 
-			<a class="btn_next" title="下一个" href="#">Next</a> 
-			<div class="banner_pic"> 
-				<ul>
-					<s:iterator value="#request.paragraph_list.get(4)" id="paragraph" status="st">
-						<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
-					</s:iterator>
-					<li>
-						<div class="cTextArea4" width="630" height="210"/><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
-					</li>	
-				</ul> 
-			</div>
-			<div class="banner_info">
-				<ul>
+  <s:iterator value="#request.paragraph_list" id="paragraphs_of_sequence" status="paragraph_list_st">
+  	<section <s:if test="%{#paragraph_list_st.index() == 0}">id="shortcodes"</s:if> 
+  		<s:if test="%{#paragraph_list_st.index() == 1}">id="about"</s:if>
+  		<s:if test="%{#paragraph_list_st.index() == 2}">id="shortcodes"</s:if>
+  		<s:if test="%{#paragraph_list_st.index() == 3}">id="gallery"</s:if>
+  	>
+ 	
+  	<div class="banner" id="kakaFocus${paragraphs_list_st.index() + 1}"> 
+		<a class="btn_prev" title="上一个" href="#">Previous</a> 
+		<a class="btn_next" title="下一个" href="#">Next</a> 
+		<div class="banner_pic"> 
+			<ul>
+			  	<s:iterator value="#paragraphs_of_sequence" id="paragraph" status="paragraph_st">
+			  		
+					<li><a href="#"><textarea cols="85" rows="11" style="overflow: auto;"><s:property value="#paragraph.content"></s:property></textarea></a></li> 
+					<!-- 
+					<li><a href="#"><img width="630" height="210" src="images/pic_02.jpg" alt="" /></a></li> 
+					<li><a href="#"><img width="630" height="210" src="images/pic_03.jpg" alt="" /></a></li> 
+					<li><a href="#"><img width="630" height="210" src="images/pic_04.jpg" alt="" /></a></li> 
+					<li><a href="#"><img width="630" height="210" src="images/pic_05.jpg" alt="" /></a></li> 
+					 -->
+				</s:iterator>
+				<li>
+					<div class="cTextArea${paragraphs_list_st.index()}" width="630" height="210"></div><!--这里将会用来填充输入框 在本文件的61行处 countTextAreaMakerGrounp函数负责生成（在HTMLmaker中）-->
+				</li>
+			</ul> 
+		</div>
+		<div class="banner_info">
+			<ul>
+				<s:iterator value="#paragraphs_of_sequence" id="paragraph" status="paragraph_st">
 					<li>
 						<h4><a href="#">快乐的旅程，参观武汉可口可乐饮料有限公司</a></h4>
-						<div class="ext" id="starInfo40"/>
+						<div class="ext" id="starInfo%{#paragraphs_list_st.index() * 10 + #paragraph_st.index()}"></div>
 					</li>
-					<li>
-						<h4><a href="#">巧口英语“力推”Club活动——？</a></h4>
-						<div class="ext" id="starInfo41"/>
-					</li>
-					<li>
-						<h4><a href="#">想学音乐应从什么时候开始？</a></h4>
-						<div class="ext" id="starInfo42"/>
-					</li>
-					<li>
-						<h4><a href="#">关于草原情全国小记者选拔赛通知。</a></h4>
-						<div class="ext" id="starInfo43"/>
-					</li>
-					<li>
-						<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-						<div class="ext" id="starInfo44"/>
-					</li>
-					<li>
-						<h4><a href="#">中国小记者新闻写作大赛？</a></h4>
-						<div class="ext" id="starInfo45"/>
-					</li>
-				</ul>
-			</div>
-			<div class="banner_count">1</div>
-		</div><!--banner end--> 			
-  </section>
+				</s:iterator>
+			</ul>
+		</div>
+		<div class="banner_count">1</div>
+	</div><!--banner end-->
+  	
+  	</section>
+ </s:iterator>
+  
 
 
 </body>

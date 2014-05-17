@@ -3,6 +3,7 @@ package com.dao;
 import java.util.List;
 
 import com.bean.Chapter;
+import com.bean.Paragraph;
 
 public interface JournalDAO {
 //	public void save_journal(Journal journal);
@@ -22,8 +23,7 @@ public interface JournalDAO {
 	@SuppressWarnings("rawtypes")
 	public List find_chapter_of_article(Integer article_id);
 	
-	@SuppressWarnings("rawtypes")
-	public List find_paragraph_of_chapter(Integer chapter_id);
+	public List<List<Paragraph>> find_paragraph_of_chapter(Integer chapter_id);
 	
 	//no use
 	public Integer find_first_journal_id();

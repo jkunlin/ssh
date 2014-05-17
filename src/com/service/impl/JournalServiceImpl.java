@@ -5,6 +5,7 @@ import java.util.List;
 import com.bean.Article;
 import com.bean.Chapter;
 import com.bean.Journal;
+import com.bean.Paragraph;
 import com.dao.JournalDAO;
 import com.service.JournalService;
 
@@ -39,9 +40,8 @@ public class JournalServiceImpl implements JournalService {
 		return journalDAO.find_chapter_of_article(article_id);
 	}
 	
-	@SuppressWarnings("rawtypes")
 	@Override
-	public List find_paragraph_of_article(Integer chapter_id) {
+	public List<List<Paragraph>> find_paragraph_of_article(Integer chapter_id) {
 		return journalDAO.find_paragraph_of_chapter(chapter_id);
 	}
 	

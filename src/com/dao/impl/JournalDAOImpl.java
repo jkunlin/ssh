@@ -1,5 +1,6 @@
 package com.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -7,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.bean.Chapter;
+import com.bean.Paragraph;
 import com.dao.JournalDAO;
 
 public class JournalDAOImpl implements JournalDAO {
@@ -59,33 +61,28 @@ public class JournalDAOImpl implements JournalDAO {
 		return res;
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "unchecked" })
 	@Override
-	public List find_paragraph_of_chapter(Integer chapter_id) {
+	public List<List<Paragraph>> find_paragraph_of_chapter(Integer chapter_id) {
 		Session session = sessionFactory.openSession();
-		List res = null;
-		List tmp = null;
+		List<List<Paragraph>> res = new ArrayList<List<Paragraph>>();
 		String hql = "select max(sequence) from Paragraph paragraph where chapter_id = " + chapter_id;
 		Query query = session.createQuery(hql);
 		Integer max_sequence = (Integer)query.uniqueResult();
+		if (max_sequence == null) {
+			session.close();
+			return null;
+		}
 		
-		hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = 0";
-		query = session.createQuery(hql);
-		query.setInteger("chapter_id", chapter_id);
-		query.setFirstResult(0);
-		query.setMaxResults(5);
-		res = query.list();
-		for (int i = 1; i <= max_sequence; ++i) {
+		
+		for (int i = 0; i <= max_sequence; ++i) {
 			hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = :sequence";
 			query = session.createQuery(hql);
 			query.setInteger("chapter_id", chapter_id);
 			query.setInteger("sequence", i);
 			query.setFirstResult(0);
 			query.setMaxResults(5);
-			tmp = query.list();
-			if (!tmp.isEmpty()) {
-				res.addAll(tmp);
-			}
+			res.add(query.list());
 		}
 		session.close();
 		return res;
