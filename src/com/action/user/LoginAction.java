@@ -1,5 +1,8 @@
 package com.action.user;
 
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.UserService;
 
@@ -25,10 +28,17 @@ public class LoginAction extends ActionSupport {
 		this.service = service;
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public String execute() throws Exception {
-		if (this.service.checkUser(username, password))
+		Boolean[] admin = {false};
+		if (this.service.checkUser(username, password, (Boolean[])admin)) {
+			Map session = ActionContext.getContext().getSession();
+			session.put("username", username);
+			session.put("password", password);
+			session.put("admin", admin[0]);
 			return SUCCESS;
+		}
 		else
 			return INPUT;
 	}

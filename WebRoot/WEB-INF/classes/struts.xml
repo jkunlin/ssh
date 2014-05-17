@@ -8,6 +8,9 @@
 			<result name="success" type="redirect">listJournal.action</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
+		<action name="saveNote" class="saveNoteAction">
+			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
+		</action>
 		<!-- 
 		<action name="enrollAction" class="EnrollAction">
 			<result name="success">/login.jsp</result>

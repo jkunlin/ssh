@@ -93,10 +93,18 @@
 		<property name="service">
 			<ref bean="journalService"></ref>
 		</property>
+		<property name="userService">
+			<ref bean="userService"></ref>
+		</property>
 	</bean>
 	<bean id="addParagraphAction" class="com.action.journal.AddParagraph" scope="prototype">
 		<property name="service">
 			<ref bean="journalService"></ref>
+		</property>
+	</bean>
+	<bean id="saveNoteAction" class="com.action.user.saveNoteAction" scope="prototype">
+		<property name="service">
+			<ref bean="userService"></ref>
 		</property>
 	</bean>
 	<!-- 

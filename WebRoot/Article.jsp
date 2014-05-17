@@ -265,21 +265,25 @@ $(function(){
 		<a class="float-close" id="float-close" style="background:url(images/x.png) no-repeat left top;background-size:100% 100%;" href="javascript:void(0);">X</a>
 		<div class="newslist">
 			<h3>笔记</h3>
-			<table width="290px" border="0">
-				<tr>
-					<textarea id="note" cols="40" rows="18" style="overflow: auto;"></textarea><!--笔记的textarea在这里的-->
-				<tr>
-				<tr>
-					<td><input id="buttonn" type="submit" class="button" style="width:150px" value="保存笔记"/></td><!--笔记的提交按钮在这里的-->
-					<td>
-						<div style="vertical-align: bottom; height: 20px; line-height: 20px; margin: 0px;color: Gray;">
-							<label id="info2n" style="float: right; font-size: 12px;">个字</label>
-							<span id="info0n" style="float: right; font-size: 20px; font-weight: bold;">600</span>
-							<label id="info1n" style="float: right; font-size: 12px;">还能输入</label>
-						</div>
-					</td>
-				</tr>
-			</table>
+			<form action="saveNote">
+				<input name="article_id" style="display:none;" value="${article_id}">
+				<input name="chapter_id" style="display:none;" value="${chapter_id}">
+				<table width="290px" border="0">
+					<tr>
+						<textarea name="note" id="note" cols="40" rows="18" style="overflow: auto;"><s:property value="#request.note"></s:property></textarea><!--笔记的textarea在这里的-->
+					<tr>
+					<tr>
+						<td><input id="buttonn" type="submit" class="button" style="width:150px" value="保存笔记"/></td><!--笔记的提交按钮在这里的-->
+						<td>
+							<div style="vertical-align: bottom; height: 20px; line-height: 20px; margin: 0px;color: Gray;">
+								<label id="info2n" style="float: right; font-size: 12px;">个字</label>
+								<span id="info0n" style="float: right; font-size: 20px; font-weight: bold;">600</span>
+								<label id="info1n" style="float: right; font-size: 12px;">还能输入</label>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 	<!--直接搜索外链不用管-->

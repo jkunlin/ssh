@@ -2,30 +2,49 @@ package com.dao.impl;
 
 import java.util.List;
 
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import com.bean.User;
 import com.dao.UserDAO;
 
-public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
+public class UserDAOImpl implements UserDAO {
+	
+	private SessionFactory sessionFactory;
+	
+	
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	/*
 	@SuppressWarnings("unchecked")
 	public List<User> findAllUsers()
 	{
+		Session session = sessionFactory.openSession();
 		String hql = "from User user order by user.id desc";
-		return (List<User>)this.getHibernateTemplate().find(hql);
+		Query query = session.createQuery(hql);
+		List<User> res = query.list();
+		session.close();
+		return res;
 	}
-
-	public User findUserById(Integer id)
-	{
-		User user = (User) this.getHibernateTemplate().get(User.class, id);
-		return user;
-	}
-
+	*/
+	
 	@SuppressWarnings("rawtypes")
 	public User findUserByUsername(String username){
+		
+		Session session = sessionFactory.openSession();
+		String hql = "from User user where user.username = '" + username + "'";
+		Query query = session.createQuery(hql);
+		List list = query.list();
+		session.close();
 		User user = new User();
 		user.setUsername(username);
-		List list = this.getHibernateTemplate().findByExample(user);
 		if (list.isEmpty()) {
 			user.setPassword(null);
 			return user;
@@ -34,18 +53,29 @@ public class UserDAOImpl extends HibernateDaoSupport implements UserDAO {
 			return (User)list.get(0);
 		}
 	}
-	public void removeUser(User user)
-	{
-		this.getHibernateTemplate().delete(user);
-	}
 
 	public void saveUser(User user)
 	{
-		this.getHibernateTemplate().save(user);
+		Session session = sessionFactory.openSession();
+		session.save(user);
+		session.close();
 	}
 
 	public void updateUser(User user)
 	{
-		this.getHibernateTemplate().update(user);
+		Session session = sessionFactory.openSession();
+		session.update(user);
+		session.flush();
+		session.close();
+	}
+
+	@Override
+	public String find_note_of_user(String username) {
+		Session session = sessionFactory.openSession();
+		String hql = "select note from User user where username = '" + username + "'";
+		Query query = session.createQuery(hql);
+		String res = (String)query.uniqueResult();
+		session.clear();
+		return res;
 	}
 }

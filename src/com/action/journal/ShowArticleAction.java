@@ -6,6 +6,7 @@ import java.util.Map;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.JournalService;
+import com.service.UserService;
 
 public class ShowArticleAction extends ActionSupport {
 	/**
@@ -13,8 +14,16 @@ public class ShowArticleAction extends ActionSupport {
 	 */
 	private static final long serialVersionUID = 1205480114189063557L;
 	private JournalService service;
+	private UserService userService;
 	private Integer article_id;
 	private Integer chapter_id;
+	
+	public UserService getUserService() {
+		return userService;
+	}
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 	public JournalService getService() {
 		return service;
 	}
@@ -39,8 +48,6 @@ public class ShowArticleAction extends ActionSupport {
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		
-		
-		
 		Map request = (Map) ActionContext.getContext().get("request");
 		List chapter_list = service.find_chapter_of_article(article_id);
 		request.put("chapter_list", chapter_list);
@@ -49,7 +56,8 @@ public class ShowArticleAction extends ActionSupport {
 			chapter_id = (Integer)((Object[])chapter_list.get(0))[0];
 		}
 		request.put("paragraph_list", service.find_paragraph_of_article(chapter_id));
-		
+		Map session = (Map) ActionContext.getContext().get("session");
+		request.put("note", userService.find_note_of_user((String)session.get("username")));
 		return SUCCESS;
 	}
 	

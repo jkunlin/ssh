@@ -108,9 +108,11 @@
 		</div>
 		<!--菜单-->
 		</div>
+		<s:if test="#session.admin == true">
 			<div class="float-open" id="float-open2" style="left:-2px; top:300px;background:url(images/admin.png) no-repeat;background-size:90% 90%;background-position:center;">
 			<a class="open-btn" id="open-btn2" href="javascript:void(0);">&gt;</a>
 		</div>
+		
 		<div class="float-news" id="float-news2" style="left:-450px; top:250px; width:48px;height:200px">
 			<table>
 				<tr>
@@ -143,6 +145,8 @@
 				</tr>
 			</table>
 		</div>
+		
+		
 		
 		<!--新建杂志设置-->
 		<div class="float-news" id="float-new-set" style="left:-300px; top:200px; width:200px;height:200px">
@@ -255,5 +259,7 @@
 				</table>
 			</div>
 		</div>
+		
+		</s:if>
 	</body>
 </html>

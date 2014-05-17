@@ -14,5 +14,14 @@
 		<property name="password" type="java.lang.String">
 			<column name="password" length="20" not-null="true"></column>
 		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" length="50" not-null="false"></column>
+		</property>
+		<property name="note" type="java.lang.String">
+			<column name="note" length="500" not-null="false"></column>
+		</property>
+		<property name="admin" type="java.lang.Boolean">
+			<column name="admin" not-null="false"></column>
+		</property>
 	</class>
 </hibernate-mapping>
