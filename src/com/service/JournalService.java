@@ -19,4 +19,6 @@ public interface JournalService {
 			List<String> articles_outline, List<String> chapters_title);
 	public void delete_journal(Integer journal_id);
 	public void update_article(Integer article_id, String article_title, String article_outline);
+	public void add_paragraph(Integer chapter_id, Integer sequence, String content,
+			Double score , Integer score_num);
 }

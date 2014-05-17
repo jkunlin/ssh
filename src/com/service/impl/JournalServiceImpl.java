@@ -85,12 +85,20 @@ public class JournalServiceImpl implements JournalService {
 		
 	}
 
-	
+	@Override
+	public void add_paragraph(Integer chapter_id, Integer sequence,
+			String content, Double score, Integer score_num) {
+		Chapter chapter = new Chapter();
+		chapter.setChapter_id(chapter_id);
+		Paragraph paragraph = new Paragraph();
+		paragraph.setChapter(chapter);
+		paragraph.setSequence(sequence);
+		paragraph.setContent(content);
+		paragraph.setScore(score);
+		paragraph.setScore_num(score_num);
+		journalDAO.add_paragraph(paragraph);
+	}
 
-	
-
-	
-	
 	
 
 }

@@ -82,7 +82,6 @@ public class AddJournalAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(journal_title);
 		service.add_journal(journal_title, articles_title, articles_outline, chapters_title);
 		return SUCCESS;
 	}

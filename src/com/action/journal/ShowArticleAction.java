@@ -50,8 +50,6 @@ public class ShowArticleAction extends ActionSupport {
 		}
 		request.put("paragraph_list", service.find_paragraph_of_article(chapter_id));
 		
-		System.out.println(article_id);
-		System.out.println(chapter_id);
 		return SUCCESS;
 	}
 	

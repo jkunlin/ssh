@@ -66,8 +66,7 @@ public class AddParagraph extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		System.out.println(article_id);
-		System.out.println(chapter_id);
+		service.add_paragraph(chapter_id, sequence, content, 0.0, 0);
 		return SUCCESS;
 	}
 }

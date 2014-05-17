@@ -34,5 +34,6 @@ public interface JournalDAO {
 	
 	public void update_article(Integer article_id, String article_title, String article_outline);
 
+	public void add_paragraph(Paragraph paragraph);
 //	public void update_journal(Journal journal);
 }

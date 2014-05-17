@@ -49,8 +49,6 @@ public class EditJournalAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(article_id);
-		System.out.println(article_outline);
 		service.update_article(article_id, article_title, article_outline);
 		return SUCCESS;
 	}

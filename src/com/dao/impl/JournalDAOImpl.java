@@ -102,7 +102,6 @@ public class JournalDAOImpl implements JournalDAO {
 
 	@Override
 	public void add_chapter(Chapter chapter) {
-		// TODO Auto-generated method stub
 		Session session = sessionFactory.openSession();
 		session.save(chapter);
 		session.close();
@@ -128,6 +127,14 @@ public class JournalDAOImpl implements JournalDAO {
 		query.setInteger("article_id", article_id);
 		query.executeUpdate();
 		session.close();
+	}
+
+	@Override
+	public void add_paragraph(Paragraph paragraph) {
+		Session session = sessionFactory.openSession();
+		session.save(paragraph);
+		session.close();
+		
 	}
 
 	

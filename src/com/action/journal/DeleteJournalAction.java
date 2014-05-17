@@ -29,7 +29,6 @@ public class DeleteJournalAction extends ActionSupport {
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		service.delete_journal(journal_id);
-		System.out.println(journal_id);
 		return SUCCESS;
 	}
 	

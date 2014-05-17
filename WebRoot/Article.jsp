@@ -493,7 +493,7 @@ $(function(){
 	<div class="banner_pic"> 
 		<ul>
 			<s:iterator value="#request.paragraph_list.get(2)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
+				<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 			</s:iterator>
 			<s:bean name="org.apache.struts2.util.Counter" id="counter">
 			   <s:param name="first" value="#request.paragraph_list.get(2).size() + 1" />
@@ -548,7 +548,7 @@ $(function(){
 	<div class="banner_pic"> 
 		<ul>
 			<s:iterator value="#request.paragraph_list.get(3)" id="paragraph" status="st">
-				<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
+				<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 			</s:iterator> 
 			<s:bean name="org.apache.struts2.util.Counter" id="counter">
 			   <s:param name="first" value="#request.paragraph_list.get(3).size() + 1" />
@@ -599,7 +599,7 @@ $(function(){
 			<div class="banner_pic"> 
 				<ul>
 					<s:iterator value="#request.paragraph_list.get(4)" id="paragraph" status="st">
-						<li><a href="#"><img width="630" height="210" src="images/pic_0${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
+						<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
 					</s:iterator>
 					<s:bean name="org.apache.struts2.util.Counter" id="counter">
 					   <s:param name="first" value="#request.paragraph_list.get(4).size() + 1" />
