@@ -39,7 +39,9 @@ public class LoginAction extends ActionSupport {
 			session.put("admin", admin[0]);
 			return SUCCESS;
 		}
-		else
+		else {
+			addFieldError("message", "用户名或密码错误");
 			return INPUT;
+		}
 	}
 }

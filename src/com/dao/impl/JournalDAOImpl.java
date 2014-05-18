@@ -23,7 +23,7 @@ public class JournalDAOImpl implements JournalDAO {
 	@Override
 	public List find_all_journal() {
 		Session session = sessionFactory.openSession();
-		String hql = "select journal.journal_id, journal.journal_title, journal.ISSN from Journal journal";
+		String hql = "select journal.journal_id, journal.journal_title, journal.ISSN from Journal journal order by journal.journal_id desc";
 		List res = session.createQuery(hql).list();
 		session.close();
 		return res;
@@ -55,7 +55,7 @@ public class JournalDAOImpl implements JournalDAO {
 	@Override
 	public List find_chapter_of_article(Integer article_id) {
 		Session session = sessionFactory.openSession();
-		String hql = "select chapter_id, title from Chapter chapter where article_id = " + article_id;
+		String hql = "select chapter_id, title from Chapter chapter where article_id = " + article_id + " order by sequence";
 		List res = session.createQuery(hql).list();
 		session.close();
 		return res;
@@ -91,7 +91,7 @@ public class JournalDAOImpl implements JournalDAO {
 	@Override
 	public Integer find_first_journal_id() {
 		Session session = sessionFactory.openSession();
-		String hql = "select journal_id from Journal journal";
+		String hql = "select journal_id from Journal journal order by journal.journal_id desc";
 		Query query = session.createQuery(hql);
 		query.setFirstResult(0);
 		query.setMaxResults(1);

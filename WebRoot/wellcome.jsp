@@ -1,12 +1,7 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<!DOCTYPE html>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
     <head>
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -16,9 +11,18 @@
         <meta name="keywords" content="thumbnails, jquery, proximity, effect, css3, scale, mouse, hover" />
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style3.css" />
+       
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	    <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">   	
+	    <link rel="stylesheet" type="text/css" href="css/style4.css" />  	
+		<script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	    <script type="text/javascript" src="assep.js"></script>
+	    
     </head>
     <body id="page">
-	    <s:if test="hasFieldErrors()">  
+    
+       <s:if test="hasFieldErrors()">  
 	    	<s:iterator value="fieldErrors">  
 	    		<s:iterator value="value">  
 	    			<script language="JavaScript">  
@@ -27,6 +31,7 @@
 	    		</s:iterator>    
 	    	</s:iterator>   
 	    </s:if>
+    
         <div class="container">
 			<header>
 				<h1>SFAPU <span>BuLaBuLa</span> System</h1>
@@ -72,24 +77,60 @@
 				</ul>
 			</section>
             <p class="codrops-demos">
-            <!--
-	            <s:form action="login">
-	            	<s:textfield name="username" label="username"></s:textfield>
-	            	<s:textfield name="password" label="password"></s:textfield>
-	            	<s:submit></s:submit>
-	            </s:form> 
-             -->
-            <form action="login" method="post">
-			  		用户名: <input type="text" name="username" />
-  					密码: <input type="text" name="password" />
-		  			<input class="submit" type="submit" value="登录" />
-			</form>
+           	   <form action="login" method="post">
+			  		用户名: <input type="text" name="username" />
+  					密码: <input type="text" name="password" />
+  					
+		  			<input class="submit" type="submit" value="登陆" />
+		  			<a href="#load_change_rule" data-toggle="modal"><input class="submit" type="button" value="注册" /></a>
+				</form>
             </p>
-            
         </div>
+       
+    <div class="modal hide fade" id="load_change_rule">
+  		<div class="modal-header">
+  			<a href="#" class="close" data-dismiss="modal">X</a>
+  			<h4>User Register</h4>
+   	    </div>
+  		<div class="modal-body">
+			<form class="form-horizontal">
+			 <div class="control-group">
+			    <label class="control-label" for="inputName">User Name</label>
+			    <div class="controls">
+			      <input type="text" id="inputName" placeholder="ID">
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="inputEmail">Email</label>
+			    <div class="controls">
+			      <input type="text" id="inputEmail" placeholder="Email">
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="inputPassword">Password</label>
+			    <div class="controls">
+			      <input type="password" id="inputPassword" placeholder="Password">
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="ConfirmPassword">Confirm</label>
+			    <div class="controls">
+			      <input type="password" id="ConfirmPassword" placeholder="Input Password Again">
+			    </div>
+			  </div>
+			  
+			</form>
+    	</div>
+	    <div class="modal-footer">
+	  		<button type="submit" class="btn btn-primary">Submit</button>
+	 		 <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Quit</button>
+	  	</div>
+  	</div>
+        
+        
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.proximity.js"></script>
-		<script type="text/javascript">
+	 <script type="text/javascript">
 			$(function() {
 				
 				var Photo	= (function() {
@@ -234,6 +275,6 @@
 				Photo.init();
 				
 			});
-		</script>
+	  </script>
     </body>
 </html>
