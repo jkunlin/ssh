@@ -1,5 +1,8 @@
 package com.action.journal;
 
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.JournalService;
 
@@ -64,8 +67,15 @@ public class AddParagraph extends ActionSupport {
 		this.user_id = user_id;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public String execute() throws Exception {
+		Map session = ActionContext.getContext().getSession();
+		String username = (String)session.get("username");
+		if (username == null) {
+			addFieldError("message", "Äú»¹Ä¾ÓÐµÇÂ¼À²£¡");
+			return INPUT;
+		}
 		service.add_paragraph(chapter_id, sequence, content, 0.0, 0);
 		return SUCCESS;
 	}

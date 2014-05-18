@@ -18,6 +18,15 @@
         <link rel="stylesheet" type="text/css" href="css/style3.css" />
     </head>
     <body id="page">
+	    <s:if test="hasFieldErrors()">  
+	    	<s:iterator value="fieldErrors">  
+	    		<s:iterator value="value">  
+	    			<script language="JavaScript">  
+	    				alert('<s:property/>');  
+	    			</script>     
+	    		</s:iterator>    
+	    	</s:iterator>   
+	    </s:if>
         <div class="container">
 			<header>
 				<h1>SFAPU <span>BuLaBuLa</span> System</h1>

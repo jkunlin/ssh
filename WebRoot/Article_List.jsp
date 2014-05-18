@@ -55,7 +55,6 @@
 		</script>
     </head>
     <body>
-
 		
         <div class="container">
 			<header>
@@ -74,7 +73,7 @@
 								</div>
 							</s:a>
 						</h3>
-						<span>December 8, 2011 by Gisele Muller</span>
+						<!-- <span>December 8, 2011 by Gisele Muller</span> -->
 					</header>
 					<p>
 						<div id="article_content${st.index}">
@@ -99,7 +98,7 @@
 				<ul>
 					<s:iterator value="#request.journal_list" id = "journal">
 						<li>
-							<s:a href="listJournal.action?journal_id=%{#journal[0]}"><s:property value="#journal[1]"/> </s:a>
+							<s:a href="listJournal.action?journal_id=%{#journal[0]}"><s:property value="#journal[2]"></s:property>  <s:property value="#journal[1]"/> </s:a>
 						</li>
 					</s:iterator>
 					

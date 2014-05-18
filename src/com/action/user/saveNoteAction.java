@@ -46,6 +46,10 @@ public class saveNoteAction extends ActionSupport {
 	public String execute() throws Exception {
 		Map session = ActionContext.getContext().getSession();
 		String username = (String)session.get("username");
+		if (username == null) {
+			addFieldError("message", "Äú»¹Ä¾ÓÐµÇÂ¼À²£¡");
+			return INPUT;
+		}
 		service.save_note_of_user(username, note);
 		return SUCCESS;
 	}

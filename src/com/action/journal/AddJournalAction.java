@@ -11,6 +11,7 @@ public class AddJournalAction extends ActionSupport {
 	 * 
 	 */
 	private String journal_title;
+	private String ISSN;
 	private List<String> articles_title;
 	private List<String> articles_outline;
 	private List<String> chapters_title;
@@ -19,6 +20,18 @@ public class AddJournalAction extends ActionSupport {
 
 	
 	
+	public String getISSN() {
+		return ISSN;
+	}
+
+
+
+	public void setISSN(String iSSN) {
+		ISSN = iSSN;
+	}
+
+
+
 	public String getJournal_title() {
 		return journal_title;
 	}
@@ -82,7 +95,7 @@ public class AddJournalAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		service.add_journal(journal_title, articles_title, articles_outline, chapters_title);
+		service.add_journal(journal_title, ISSN, articles_title, articles_outline, chapters_title);
 		return SUCCESS;
 	}
 }

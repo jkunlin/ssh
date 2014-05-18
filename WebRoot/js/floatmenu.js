@@ -115,7 +115,7 @@ function save_article(){
 }
 function newJournalListHTMLmaker(ArticleNumber,ChapterNumber){
 	var arr=new Array();
-	arr.push('<ul><li>刊号：<input type="text"/></li><li>标题：<input type="text"  name="journal_title"/></li>');
+	arr.push('<ul><li>刊号：<input type="text" name="ISSN"/></li><li>标题：<input type="text"  name="journal_title"/></li>');
 	for(var i=1;i<ArticleNumber+1;i++){
 		arr.push('<li><a href="javascript:edit_article('+i+')"><div id="new'+i+'">'+i+' 点击编辑</div><a/>');
 		arr.push('<input name="articles_title['+(i-1)+']" id="new1title'+i+'" style="display:none" type="text" value=""/>');

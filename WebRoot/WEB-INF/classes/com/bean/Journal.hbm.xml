@@ -11,6 +11,9 @@
 		<property name="journal_title" type="java.lang.String">
 			<column name="journal_title" length="20" not-null="false"></column>
 		</property>
+		<property name="ISSN" type="java.lang.String">
+			<column name="ISSN" length="20" not-null="false"></column>
+		</property>
 		<set name="articles" inverse="true" cascade="all">
 			<key column="journal_id"></key>
 			<one-to-many class="com.bean.Article"></one-to-many>

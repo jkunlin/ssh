@@ -23,7 +23,7 @@ public class JournalDAOImpl implements JournalDAO {
 	@Override
 	public List find_all_journal() {
 		Session session = sessionFactory.openSession();
-		String hql = "select journal.journal_id, journal.journal_title from Journal journal";
+		String hql = "select journal.journal_id, journal.journal_title, journal.ISSN from Journal journal";
 		List res = session.createQuery(hql).list();
 		session.close();
 		return res;

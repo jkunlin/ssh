@@ -10,6 +10,7 @@
 		</action>
 		<action name="saveNote" class="saveNoteAction">
 			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
+			<result name="input">/wellcome.jsp</result>
 		</action>
 		<!-- 
 		<action name="enrollAction" class="EnrollAction">
@@ -40,6 +41,7 @@
 		</action>
 		<action name="addParagraph" class="addParagraphAction">
 			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
+			<result name="input">/wellcome.jsp</result>
 		</action>
 	</package>
 </struts>    

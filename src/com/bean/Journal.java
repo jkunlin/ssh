@@ -6,9 +6,16 @@ import java.util.Set;
 public class Journal {
 	private Integer journal_id;
 	private String journal_title;
+	private String ISSN;
 	private Set<Article> articles = new HashSet<Article>();
 	
 	
+	public String getISSN() {
+		return ISSN;
+	}
+	public void setISSN(String iSSN) {
+		ISSN = iSSN;
+	}
 	public String getJournal_title() {
 		return journal_title;
 	}
