@@ -58,6 +58,7 @@ public class UserDAOImpl implements UserDAO {
 	{
 		Session session = sessionFactory.openSession();
 		session.save(user);
+		session.flush();
 		session.close();
 	}
 

@@ -58,6 +58,13 @@
 		
         <div class="container">
 			<header>
+				<s:if test="#session.username != null">
+			    	<h5 style="float:right;">Welcome Back! <s:property value="#session.username"></s:property><a href="logout.action">&emsp;log out</a></h5><br>
+			    </s:if>
+			    <s:else>
+			    	<h5 style="float:right;"><a href="wellcome.jsp">&emsp;log in</a></h5><br>
+			    </s:else>
+			    
 				<h1>Article <span>Wanted!</span></h1>
 				<h2>Using Box Shadows, Transform and Transitions</h2>
 			</header>
@@ -214,7 +221,7 @@
 		<!--编辑杂志菜单-->
 		<div class="float-news" id="float-edit" style="left:-600px; top:100px; width:400px;height:450px">
 			<!--需要设置当前文章数-->
-			<input id="current_article_number" style="display:none" value="${request.article_list.size()}"/>
+			<input id="current_article_number" style="display:none" value='${request.article_list.size()}'/>
 			<a class="float-close" id="float-close-edit" style="background:url(images/x.png) no-repeat;background-size:100% 100%;" href="javascript:void(0);">X</a>
 			<div class="newslist">
 				<h3>编辑文章信息</h3>

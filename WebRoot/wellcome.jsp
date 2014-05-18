@@ -81,7 +81,7 @@
 			  		用户名: <input type="text" name="username" />
   					密码: <input type="text" name="password" />
   					
-		  			<input class="submit" type="submit" value="登陆" />
+		  			<input class="submit" type="submit" value="登录" />
 		  			<a href="#load_change_rule" data-toggle="modal"><input class="submit" type="button" value="注册" /></a>
 				</form>
             </p>
@@ -92,39 +92,41 @@
   			<a href="#" class="close" data-dismiss="modal">X</a>
   			<h4>User Register</h4>
    	    </div>
+   	    <form action = "enroll" class="form-horizontal">
   		<div class="modal-body">
-			<form class="form-horizontal">
+			
 			 <div class="control-group">
 			    <label class="control-label" for="inputName">User Name</label>
 			    <div class="controls">
-			      <input type="text" id="inputName" placeholder="ID">
+			      <input name = "username" type="text" id="inputName" placeholder="ID">
 			    </div>
 			  </div>
 			  <div class="control-group">
 			    <label class="control-label" for="inputEmail">Email</label>
 			    <div class="controls">
-			      <input type="text" id="inputEmail" placeholder="Email">
+			      <input name = "email" type="text" id="inputEmail" placeholder="Email">
 			    </div>
 			  </div>
 			  <div class="control-group">
 			    <label class="control-label" for="inputPassword">Password</label>
 			    <div class="controls">
-			      <input type="password" id="inputPassword" placeholder="Password">
+			      <input name="password" type="password" id="inputPassword" placeholder="Password">
 			    </div>
 			  </div>
 			  <div class="control-group">
 			    <label class="control-label" for="ConfirmPassword">Confirm</label>
 			    <div class="controls">
-			      <input type="password" id="ConfirmPassword" placeholder="Input Password Again">
+			      <input name="confirm_password" type="password" id="ConfirmPassword" placeholder="Input Password Again">
 			    </div>
 			  </div>
 			  
-			</form>
+			
     	</div>
 	    <div class="modal-footer">
 	  		<button type="submit" class="btn btn-primary">Submit</button>
 	 		 <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Quit</button>
 	  	</div>
+	  	</form>
   	</div>
         
         

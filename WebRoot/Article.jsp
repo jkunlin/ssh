@@ -9,6 +9,10 @@
 <link rel="stylesheet" type="text/css" href="css/style2.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/shou.css" />
+<!-- 
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	    <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+	     --> 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script> 
@@ -17,6 +21,9 @@
 <script type="text/javascript" src="js/focusBoxController.js "></script> 
 <script type="text/javascript" src="js/jquery.raty.min.js"></script>
 <script type="text/javascript" src="js/HTMLMaker.js"></script>
+<!-- 
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	 -->
 
 <script type="text/javascript">
 document.onkeydown=function(e){
@@ -257,8 +264,20 @@ $(function(){
 	starHTMLMakerGrounp('starInfo',4,5);
 })
 </script>
+
+
 </head>
 <body>
+	<div class="container">
+			<header>
+			    <s:if test="#session.username != null">
+			    	<h5 style="float:right;">Welcome Back! <s:property value="#session.username"></s:property><a href="logout.action">&emsp;log out</a></h5><br>
+			    </s:if>
+			    <s:else>
+			    	<h5 style="float:right;"><a href="wellcome.jsp">&emsp;log in</a></h5><br>
+			    </s:else>
+			</header>
+    </div>
 <div class="weiduduan clearfix">
 	<div class="float-open" id="float-open" style="left:-2px;top:75px; background:url(images/note.png) no-repeat;background-size:90% 90%;background-position:center;"><a class="open-btn" id="open-btn" href="javascript:void(0);">&gt;</a></div>
 	<div class="float-news" id="float-news" style="left:-450px;top:25px">

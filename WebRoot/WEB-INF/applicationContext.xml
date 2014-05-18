@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	
-	<bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource">
+	<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/storyfm"></property>
 		<property name="username" value="root"></property>
@@ -103,6 +103,12 @@
 		</property>
 	</bean>
 	<bean id="saveNoteAction" class="com.action.user.saveNoteAction" scope="prototype">
+		<property name="service">
+			<ref bean="userService"></ref>
+		</property>
+	</bean>
+	<bean id="logoutAction" class="com.action.user.LogoutAction"></bean>
+	<bean id="enrollAction" class="com.action.user.EnrollAction">
 		<property name="service">
 			<ref bean="userService"></ref>
 		</property>
