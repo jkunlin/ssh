@@ -6,6 +6,7 @@ import com.bean.Article;
 import com.bean.Chapter;
 import com.bean.Journal;
 import com.bean.Paragraph;
+import com.bean.User;
 import com.dao.JournalDAO;
 import com.service.JournalService;
 
@@ -87,17 +88,31 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public void add_paragraph(Integer chapter_id, Integer sequence,
+	public void add_paragraph(Integer userid, Integer chapter_id, Integer sequence,
 			String content, Double score, Integer score_num) {
 		Chapter chapter = new Chapter();
 		chapter.setChapter_id(chapter_id);
+		User user = new User();
+		user.setUserid(userid);
 		Paragraph paragraph = new Paragraph();
 		paragraph.setChapter(chapter);
+		paragraph.setUser(user);
 		paragraph.setSequence(sequence);
 		paragraph.setContent(content);
 		paragraph.setScore(score);
 		paragraph.setScore_num(score_num);
 		journalDAO.add_paragraph(paragraph);
+	}
+
+	@Override
+	public Paragraph find_paragraph_by_paragraph_id(Integer paragraph_id) {
+		return this.journalDAO.find_paragraph_by_paragraph_id(paragraph_id);
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public List find_all_paragraph_of_user(Integer userid) {
+		return this.journalDAO.find_all_paragraph_of_user(userid);
 	}
 
 	

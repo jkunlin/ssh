@@ -137,6 +137,25 @@ public class JournalDAOImpl implements JournalDAO {
 		
 	}
 
+	@SuppressWarnings("rawtypes")
+	@Override
+	public List find_all_paragraph_of_user(Integer userid) {
+		Session session = sessionFactory.openSession();
+		String hql = "select journal.journal_title, chapter.chapter_title, paragraph.sequence, paragraph.paragraph_id from ";
+		Query query = session.createQuery(hql);
+		return query.list();
+	}
+
+	@Override
+	public Paragraph find_paragraph_by_paragraph_id(Integer paragraph_id) {
+		Session session = sessionFactory.openSession();
+		String hql = "from Paragraph paragraph where paragraph_id = " + paragraph_id;
+		Query query = session.createQuery(hql);
+		Paragraph paragraph = (Paragraph)query.uniqueResult();
+		session.close();
+		return paragraph;
+	}
+
 	
 
 	

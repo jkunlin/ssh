@@ -11,6 +11,6 @@ public interface UserDAO {
 
 	public void updateUser(User user);
 
-	public String find_note_of_user(String username);
+	public String find_note_of_user(Integer userid);
 
 }

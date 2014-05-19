@@ -76,7 +76,7 @@ public class AddParagraph extends ActionSupport {
 			addFieldError("message", "Äú»¹Ä¾ÓÐµÇÂ¼À²£¡");
 			return INPUT;
 		}
-		service.add_paragraph(chapter_id, sequence, content, 0.0, 0);
+		service.add_paragraph(userid, chapter_id, sequence, content, 0.0, 0);
 		return SUCCESS;
 	}
 }

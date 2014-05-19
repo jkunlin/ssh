@@ -1,5 +1,7 @@
 package com.bean;
 
+import java.util.Set;
+
 public class User {
 	private Integer userid;
 	private String username;
@@ -7,6 +9,7 @@ public class User {
 	private String email;
 	private String note;
 	private Boolean admin;
+	private Set<Paragraph> paragraphs;
 	
 	public User(){}
 
@@ -56,6 +59,14 @@ public class User {
 
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
+	}
+
+	public Set<Paragraph> getParagraphs() {
+		return paragraphs;
+	}
+
+	public void setParagraphs(Set<Paragraph> paragraphs) {
+		this.paragraphs = paragraphs;
 	}
 	
 	

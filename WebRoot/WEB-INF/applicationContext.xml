@@ -113,6 +113,14 @@
 			<ref bean="userService"></ref>
 		</property>
 	</bean>
+	<bean id="userManageAction" class="com.action.user.UserManageAction" scope="prototype">
+		<property name="journalService">
+			<ref bean="journalService"></ref>
+		</property>
+		<property name="userService">
+			<ref bean="userService"></ref>
+		</property>
+	</bean>
 	<!-- 
 	<bean id="userManage" class="dao.UserManage" abstract="false" lazy-init="default"
 		autowire="default" dependency-check="default">

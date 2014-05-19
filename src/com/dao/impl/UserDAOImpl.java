@@ -56,12 +56,12 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public String find_note_of_user(String username) {
+	public String find_note_of_user(Integer userid) {
 		Session session = sessionFactory.openSession();
-		String hql = "select note from User user where username = '" + username + "'";
+		String hql = "select note from User user where userid = " + userid;
 		Query query = session.createQuery(hql);
 		String res = (String)query.uniqueResult();
-		session.clear();
+		session.close();
 		return res;
 	}
 

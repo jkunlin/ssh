@@ -47,8 +47,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public String find_note_of_user(String username) {
-		return this.userDao.find_note_of_user(username);
+	public String find_note_of_user(Integer userid) {
+		return this.userDao.find_note_of_user(userid);
 	}
 
 	@Override
@@ -58,6 +58,11 @@ public class UserServiceImpl implements UserService {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public User find_user_by_userid(Integer userid) {
+		return this.userDao.findUserByUserid(userid);
 	}
 
 }

@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!doctype html>
 <html>
 <head>
@@ -44,48 +45,41 @@
                     <table class="table table-striped table-hover table-bordered">
                             <thead>
                               <tr>
-                                <th>用户名</th>
                                 <th>期刊号</th>
                                 <th>文章号</th>
                                 <th>段落号</th>
                               </tr>
                             </thead>
                             <tr>
-                              <td>kunkun</td>
                               <td>2014.5</td>
                               <td>2</td>
                               <td><a href="paragraph.html">3</a></td>
                               
                             </tr>
                             <tr>
-                              <td>kunkun1</td>
                               <td></td>
                               <td></td>
                               <td></td>
                 </tr>
                             <tr>
-                              <td>kunkun2</td>
                               <td></td>
                               <td></td>
                               <td></td>
                       </tr>
                             
                 <tr>
-                              <td>kunkun3</td>
                               <td></td>
                               <td></td>
                               <td></td>
                       </tr>
                             
                 <tr>
-                              <td>kunkun4</td>
                               <td></td>
                               <td></td>
                               <td></td>
                       </tr>
                             
                 <tr>
-                              <td>kunkun5</td>
                               <td></td>
                               <td></td>
                               <td></td>
@@ -96,7 +90,7 @@
                                {	   
                                     document.write('<tr><td>') ;
                                     document.write(tl);	
-                                    document.write('</td><td></td><td></td><td></td></tr>');
+                                    document.write('</td><td></td><td></td></tr>');
                                     tl--; 
                                }
                                document.title="My Space";

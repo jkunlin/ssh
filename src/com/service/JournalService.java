@@ -19,6 +19,9 @@ public interface JournalService {
 			List<String> articles_outline, List<String> chapters_title);
 	public void delete_journal(Integer journal_id);
 	public void update_article(Integer article_id, String article_title, String article_outline);
-	public void add_paragraph(Integer chapter_id, Integer sequence, String content,
+	public void add_paragraph(Integer userid, Integer chapter_id, Integer sequence, String content,
 			Double score , Integer score_num);
+	public Paragraph find_paragraph_by_paragraph_id(Integer paragraph_id);
+	@SuppressWarnings("rawtypes")
+	public List find_all_paragraph_of_user(Integer userid);
 }

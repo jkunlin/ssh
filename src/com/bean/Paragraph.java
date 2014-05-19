@@ -7,6 +7,14 @@ public class Paragraph {
 	private Double score;
 	private Integer score_num;
 	private Chapter chapter;
+	private User user;
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Integer getParagraph_id() {
 		return paragraph_id;
 	}

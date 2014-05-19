@@ -57,7 +57,7 @@ public class ShowArticleAction extends ActionSupport {
 		}
 		request.put("paragraph_list", service.find_paragraph_of_article(chapter_id));
 		Map session = (Map) ActionContext.getContext().get("session");
-		request.put("note", userService.find_note_of_user((String)session.get("username")));
+		request.put("note", userService.find_note_of_user((Integer)session.get("userid")));
 		return SUCCESS;
 	}
 	

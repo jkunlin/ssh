@@ -271,7 +271,7 @@ $(function(){
 	<div class="container">
 			<header>
 			    <s:if test="#session.username != null">
-			    	<h5 style="float:right;">Welcome Back! <s:property value="#session.username"></s:property><a href="logout.action">&emsp;log out</a></h5><br>
+			    	<h5 style="float:right;">Welcome Back! <a href="userManage.action"><s:property value="#session.username"></s:property></a><a href="logout.action">&emsp;log out</a></h5><br>
 			    </s:if>
 			    <s:else>
 			    	<h5 style="float:right;"><a href="wellcome.jsp">&emsp;log in</a></h5><br>

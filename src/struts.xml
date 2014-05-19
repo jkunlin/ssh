@@ -19,6 +19,9 @@
 			<result name="success" type="redirect">listJournal.action</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
+		<action name="userManage" class="userManageAction">
+			<result name="success">/user.jsp</result>
+		</action>
 		<!-- 
 		<action name="enrollAction" class="EnrollAction">
 			<result name="success">/login.jsp</result>

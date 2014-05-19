@@ -35,5 +35,11 @@ public interface JournalDAO {
 	public void update_article(Integer article_id, String article_title, String article_outline);
 
 	public void add_paragraph(Paragraph paragraph);
+	
+	//journal_title, chapter_title, sequence of paragraph, paragraph_id
+	@SuppressWarnings("rawtypes")
+	public List find_all_paragraph_of_user(Integer userid);
+	
+	public Paragraph find_paragraph_by_paragraph_id(Integer paragraph_id);
 //	public void update_journal(Journal journal);
 }

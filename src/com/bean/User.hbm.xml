@@ -23,5 +23,9 @@
 		<property name="admin" type="java.lang.Boolean">
 			<column name="admin" not-null="false"></column>
 		</property>
+		<set name="paragraphs" inverse="true" cascade="all">
+			<key column="paragraph_id"></key>
+			<one-to-many class="com.bean.Paragraph"></one-to-many>
+		</set>
 	</class>
 </hibernate-mapping>
