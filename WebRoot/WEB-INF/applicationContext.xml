@@ -107,8 +107,8 @@
 			<ref bean="userService"></ref>
 		</property>
 	</bean>
-	<bean id="logoutAction" class="com.action.user.LogoutAction"></bean>
-	<bean id="enrollAction" class="com.action.user.EnrollAction">
+	<bean id="logoutAction" class="com.action.user.LogoutAction" scope="prototype"></bean>
+	<bean id="enrollAction" class="com.action.user.EnrollAction" scope="prototype">
 		<property name="service">
 			<ref bean="userService"></ref>
 		</property>

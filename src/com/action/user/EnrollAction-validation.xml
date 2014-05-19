@@ -4,6 +4,10 @@
 
 <validators>
     <field name="username">
+    	 <field-validator type="requiredstring">  
+            <param name="trim">true</param>  
+            <message key="用户名不能为空"></message>  
+        </field-validator>
         <field-validator type="stringlength">
         	<param name="minLength">6</param>
         	<param name="maxLength">20</param>
@@ -26,8 +30,12 @@
         </field-validator>  
     </field> 
     <field name="email">  
-        <field-validator type="email">  
-            <message>请输入合法的Email地址！</message>  
+    	 <field-validator type="requiredstring">  
+            <param name="trim">true</param>  
+            <message key="Email不能为空"></message>  
+        </field-validator>
+        <field-validator type="email">
+            <message>不合法的Email地址！</message>  
         </field-validator>  
     </field>   
 </validators>

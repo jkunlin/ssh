@@ -22,15 +22,8 @@
     </head>
     <body id="page">
     
-       <s:if test="hasFieldErrors()">  
-	    	<s:iterator value="fieldErrors">  
-	    		<s:iterator value="value">  
-	    			<script language="JavaScript">  
-	    				alert('<s:property/>');  
-	    			</script>     
-	    		</s:iterator>    
-	    	</s:iterator>   
-	    </s:if>
+       <s:include value="message.jsp"></s:include>  
+	
     
         <div class="container">
 			<header>
@@ -92,7 +85,7 @@
   			<a href="#" class="close" data-dismiss="modal">X</a>
   			<h4>User Register</h4>
    	    </div>
-   	    <form action = "enroll" class="form-horizontal">
+   	    <form action = "enroll" class="form-horizontal" method="post">
   		<div class="modal-body">
 			
 			 <div class="control-group">
@@ -126,7 +119,7 @@
 	  		<button type="submit" class="btn btn-primary">Submit</button>
 	 		 <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Quit</button>
 	  	</div>
-	  	</form>
+	  	<form>
   	</div>
         
         
