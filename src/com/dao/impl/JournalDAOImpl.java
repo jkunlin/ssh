@@ -76,7 +76,7 @@ public class JournalDAOImpl implements JournalDAO {
 		
 		
 		for (int i = 0; i <= max_sequence; ++i) {
-			hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = :sequence";
+			hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = :sequence order by rand()";
 			query = session.createQuery(hql);
 			query.setInteger("chapter_id", chapter_id);
 			query.setInteger("sequence", i);
