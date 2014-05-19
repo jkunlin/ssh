@@ -22,18 +22,6 @@ public class UserDAOImpl implements UserDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	/*
-	@SuppressWarnings("unchecked")
-	public List<User> findAllUsers()
-	{
-		Session session = sessionFactory.openSession();
-		String hql = "from User user order by user.id desc";
-		Query query = session.createQuery(hql);
-		List<User> res = query.list();
-		session.close();
-		return res;
-	}
-	*/
 	
 	@SuppressWarnings("rawtypes")
 	public User findUserByUsername(String username){
@@ -43,11 +31,8 @@ public class UserDAOImpl implements UserDAO {
 		Query query = session.createQuery(hql);
 		List list = query.list();
 		session.close();
-		User user = new User();
-		user.setUsername(username);
 		if (list.isEmpty()) {
-			user.setPassword(null);
-			return user;
+			return  null;
 		}
 		else {
 			return (User)list.get(0);
@@ -78,5 +63,21 @@ public class UserDAOImpl implements UserDAO {
 		String res = (String)query.uniqueResult();
 		session.clear();
 		return res;
+	}
+
+	@SuppressWarnings("rawtypes")
+	@Override
+	public User findUserByUserid(Integer userid) {
+		Session session = sessionFactory.openSession();
+		String hql = "from User user where user.userid = '" + userid + "'";
+		Query query = session.createQuery(hql);
+		List list = query.list();
+		session.close();
+		if (list.isEmpty()) {
+			return  null;
+		}
+		else {
+			return (User)list.get(0);
+		}
 	}
 }

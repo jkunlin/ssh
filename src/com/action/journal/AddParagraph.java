@@ -71,8 +71,8 @@ public class AddParagraph extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		Map session = ActionContext.getContext().getSession();
-		String username = (String)session.get("username");
-		if (username == null) {
+		Integer userid = (Integer)session.get("userid");
+		if (userid == null) {
 			addFieldError("message", "Äú»¹Ä¾ÓÐµÇÂ¼À²£¡");
 			return INPUT;
 		}

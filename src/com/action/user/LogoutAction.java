@@ -17,7 +17,7 @@ public class LogoutAction extends ActionSupport {
 	public String execute() throws Exception {
 		Map session = ActionContext.getContext().getSession();
 		session.remove("username");
-		session.remove("password");
+		session.remove("userid");
 		session.remove("admin");
 		return SUCCESS;
 	}

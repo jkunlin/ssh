@@ -28,10 +28,11 @@ public class UserServiceImpl implements UserService {
 		this.userDao.updateUser(user);
 	}
 	
-	public boolean checkUser(String username, String password, Boolean[] admin){
+	public boolean checkUser(String username, String password, Boolean[] admin, Integer[] userid){
 		User user = this.userDao.findUserByUsername(username);
-		admin[0] = user.getAdmin();
-		if (user.getPassword() != null && user.getPassword().equals(password)) {
+		if (user != null && user.getPassword().equals(password)) {
+			admin[0] = user.getAdmin();
+			userid[0] = user.getUserid();
 			return true;
 		}
 		else
@@ -39,8 +40,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void save_note_of_user(String username, String note) {
-		User user = this.userDao.findUserByUsername(username);
+	public void save_note_of_user(Integer userid, String note) {
+		User user = this.userDao.findUserByUserid(userid);
 		user.setNote(note);
 		this.userDao.updateUser(user);
 	}

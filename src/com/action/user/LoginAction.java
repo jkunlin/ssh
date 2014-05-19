@@ -32,10 +32,11 @@ public class LoginAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		Boolean[] admin = {false};
-		if (this.service.checkUser(username, password, (Boolean[])admin)) {
+		Integer[] userid = {0};
+		if (this.service.checkUser(username, password, admin, userid)) {
 			Map session = ActionContext.getContext().getSession();
 			session.put("username", username);
-			session.put("password", password);
+			session.put("userid", userid[0]);
 			session.put("admin", admin[0]);
 			return SUCCESS;
 		}
