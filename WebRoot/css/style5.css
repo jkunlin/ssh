@@ -1,0 +1,118 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*
+	*页头部分的样式
+*/
+
+#head{
+	padding: 0 0 0 0;
+}
+
+#search{
+	padding: 30px 0 0 0;
+}
+
+#nav{
+	padding: 0 0 0 0;	
+}
+
+#env{
+	padding: 0 0 0 30px;
+	font-size: 16px;
+}
+
+#resource{
+	/*padding: 0 10px 0 40px;*/
+	font-size: 14px;
+	margin-left:40px;
+}
+
+#cha_res{
+	padding: 0 0px 0 30px;
+	font-size: 14px;
+}
+
+#list{
+	padding: 50px 0px 0 40px;
+}
+
+#ratio{
+	padding: 70px 0px 0 40px;
+/*	margin-top:70px;
+	margin-left:0px;
+	margin-right:0px;*/
+}
+
+#paragraph{
+	margin-top:70px;
+}
+
+#list_btn{
+	padding: 90px 0px 0 0px;
+}
+
+#btn_c{
+	margin-bottom:20px;
+	margin-top:20px;
+	margin-left:10px;
+}
+
+#sel_situ{
+	/*padding: 0 10px 0 40px;*/
+	font-size: 14px;
+	margin-bottom:10px;
+	margin-top:10px;
+	margin-left:0px;
+}
+
+#note{
+	width: 600px;
+	height: 200px;
+}
+
+#sel_list{
+	/*padding: 0 10px 0 40px;*/
+	margin-left:10px;
+}
+
+#border_right{
+	border-right: 1px solid #d7d7d7;	
+}
+#border_left{
+	border-left: 1px solid #d7d7d7;	
+}
+#border_bottom{
+	padding: 0px 0px 50px 0px;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+#border_top{
+	padding: 0px 0px 10px 0px;
+    border-top: 1px solid #d7d7d7;
+}
+
+#DL{
+	padding: 5px 0px 0px 50px;
+}
+
+#DL1{
+	margin-left:0px;	
+}
+
+#change_env{
+	/*padding: 0px 0px 0px 50px;*/
+	margin-left:50px;
+}
+/*navbar*/
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #555555;
+  text-decoration: none;
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 3px solid #009571;
+}

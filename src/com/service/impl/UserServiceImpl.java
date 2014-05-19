@@ -50,4 +50,13 @@ public class UserServiceImpl implements UserService {
 		return this.userDao.find_note_of_user(username);
 	}
 
+	@Override
+	public boolean usernameExsit(String username) {
+		User user = this.userDao.findUserByUsername(username);
+		if (user == null ) {
+			return false;
+		}
+		return true;
+	}
+
 }

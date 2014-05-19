@@ -53,6 +53,10 @@ public class EnrollAction extends ActionSupport {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public String execute() throws Exception {
+		if (service.usernameExsit(username)) {
+			addFieldError("message", "用户名早就被人家用了！");
+			return INPUT;
+		}
 		User user = new User();
 		user.setAdmin(false);
 		user.setUsername(username);

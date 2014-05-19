@@ -13,4 +13,6 @@ public interface UserService {
 	public void save_note_of_user(String username, String note);
 	
 	public String find_note_of_user(String username);
+	
+	public boolean usernameExsit(String username);
 }
