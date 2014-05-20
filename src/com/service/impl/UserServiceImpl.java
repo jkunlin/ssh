@@ -28,6 +28,16 @@ public class UserServiceImpl implements UserService {
 		this.userDao.updateUser(user);
 	}
 	
+	@Override
+	public boolean checkUser(String username, String password) {
+		User user = this.userDao.findUserByUsername(username);
+		if (user != null && user.getPassword().equals(password)) {
+			return true;
+		}
+		else
+			return false;
+	}
+	
 	public boolean checkUser(String username, String password, Boolean[] admin, Integer[] userid){
 		User user = this.userDao.findUserByUsername(username);
 		if (user != null && user.getPassword().equals(password)) {
@@ -64,5 +74,7 @@ public class UserServiceImpl implements UserService {
 	public User find_user_by_userid(Integer userid) {
 		return this.userDao.findUserByUserid(userid);
 	}
+
+	
 
 }

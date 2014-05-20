@@ -11,9 +11,11 @@
 
 <body>
 	<div class="container" align="center" id="paragraph">
-    	<p class="text-info">这是您在第<strong><em> 1 </em></strong>期杂志第<strong><em> 2 </em></strong>篇文章中<strong><em> 3 </em></strong>第段的文字</p>
+	
+    	<p class="text-info">这是您在<strong><em> <s:property value="journal_title"/> </em></strong>杂志<strong><em> <s:property value="article_title"/> </em></strong>文章中<strong><em> <s:property value="chapter_title"/> </em></strong>章第<s:property value="sequence"/>段的文字</p>
     	<form>
-            <textarea rows="5" cols="100" id="note" style="overflow: auto;"></textarea>
+    		
+            <textarea rows="5" cols="100" id="note" style="overflow: auto;"><s:property value="#request.paragraph.content"></s:property></textarea>
             <div align="center">
                 <button type="submit" class="btn">Submit</button>
                 <button type="submit" class="btn">delete</button>

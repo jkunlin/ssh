@@ -22,6 +22,13 @@
 		<action name="userManage" class="userManageAction">
 			<result name="success">/user.jsp</result>
 		</action>
+		<action name="modifyUserInfo" class="modifyUserInfoAction">
+			<result name="success" type="chain">userManage</result>
+			<result name="input" type="chain">userManage</result>
+		</action>
+		<action name="showParagraph" class="showParagraphAction">
+			<result name="success">/paragraph.jsp</result>
+		</action>
 		<!-- 
 		<action name="enrollAction" class="EnrollAction">
 			<result name="success">/login.jsp</result>

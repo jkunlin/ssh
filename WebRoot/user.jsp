@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	
+	 <s:include value="message.jsp"></s:include>  
 	<div class="container">
 			<header>
 			    <s:if test="#session.username != null">
@@ -65,7 +65,7 @@
                             		<td><s:property value="#paragraph[0]"></s:property></td>
                             		<td><s:property value="#paragraph[1]"></s:property></td>
                             		<td><s:property value="#paragraph[2]"></s:property></td>
-                            		<td><s:property value="#paragraph[3]"></s:property></td>
+                            		<td><s:a href="showParagraph.action?paragraph_id=%{#paragraph[4]}&journal_title=%{#paragraph[0]}&article_title=%{#paragraph[1]}&chapter_title=%{#paragraph[2]}&sequence=%{#paragraph[3]}"><s:property value="#paragraph[3]"></s:property></s:a></td>
                             	</tr>
                             </s:iterator>
                            <!-- 
@@ -88,29 +88,35 @@
                <div class="tab-pane" id="tab3">
                	  <p class="text-info">修改用户信息</p>
                   <div class="span7">
-                 <form class="form-horizontal">
+                 <form action="modifyUserInfo" class="form-horizontal" method="post">
                          <div class="control-group">
                             <label class="control-label" for="inputName">User Name</label>
                             <div class="controls">
-                              <input type="text" id="inputName" placeholder="ID" value="${request.user.username }">
+                              <input type="text" name="username" id="inputName" placeholder="ID" value="${request.user.username }">
                             </div>
                           </div>
                           <div class="control-group">
                             <label class="control-label" for="inputEmail">Email</label>
                             <div class="controls">
-                              <input type="text" id="inputEmail" placeholder="Email" value="${request.user.email }">
+                              <input type="text" id="inputEmail" name="email" placeholder="Email" value="${request.user.email }">
+                            </div>
+                          </div>
+                           <div class="control-group">
+                            <label class="control-label" for="inputOldPassword">Password</label>
+                            <div class="controls">
+                              <input type="password" name="old_password" id="inputOldPassword" placeholder="Old Password">
                             </div>
                           </div>
                           <div class="control-group">
                             <label class="control-label" for="inputPassword">Password</label>
                             <div class="controls">
-                              <input type="password" id="inputPassword" placeholder="Password">
+                              <input type="password" name="password" id="inputPassword" placeholder="Password">
                             </div>
                           </div>
                           <div class="control-group">
                             <label class="control-label" for="ConfirmPassword">Confirm</label>
                             <div class="controls">
-                              <input type="password" id="ConfirmPassword" placeholder="Input Password Again">
+                              <input type="password" name="confirm_password" id="ConfirmPassword" placeholder="Input Password Again">
                             </div>
                           </div>
 

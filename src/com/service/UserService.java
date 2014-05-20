@@ -10,6 +10,8 @@ public interface UserService {
 	
 	public User find_user_by_userid(Integer userid);
 	
+	public boolean checkUser(String username, String password);
+	
 	public boolean checkUser(String username, String password, Boolean[] admin, Integer[] userid);
 
 	public void save_note_of_user(Integer userid, String note);
