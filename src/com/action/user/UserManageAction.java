@@ -2,16 +2,16 @@ package com.action.user;
 
 import java.util.Map;
 
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
 import com.service.JournalService;
 import com.service.UserService;
 
-public class UserManageAction extends ActionSupport {
+public class UserManageAction implements Action{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 5079669184649157202L;
+	//private static final long serialVersionUID = 5079669184649157202L;
 	private JournalService journalService;
 	private UserService userService;
 	public JournalService getJournalService() {

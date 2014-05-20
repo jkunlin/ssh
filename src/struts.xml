@@ -5,18 +5,18 @@
 	<constant name="struts.devMode" value="false" />
 	<package name="user"  extends="struts-default">
 		<action name="login" class="loginAction">
-			<result name="success" type="redirect">listJournal.action</result>
+			<result name="success" type="redirectAction">listJournal</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
 		<action name="saveNote" class="saveNoteAction">
-			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
+			<result name="success" type="redirectAction">showArticle?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
 		<action name="logout" class="logoutAction">
 			<result name="success">/wellcome.jsp</result>
 		</action>
 		<action name="enroll" class="enrollAction">
-			<result name="success" type="redirect">listJournal.action</result>
+			<result name="success" type="redirectAction">listJournal</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
 		<action name="userManage" class="userManageAction">
@@ -45,19 +45,19 @@
 			<result>/Article_List.jsp</result>
 		</action>
 		<action name="addJournal" class="addJournalAction">
-			<result name="success" type="redirect">listJournal.action</result>
+			<result name="success" type="redirectAction">listJournal</result>
 		</action>
 		<action name="deleteJournal" class="deleteJournalAction">
-			<result name="success" type="redirect">listJournal.action</result>
+			<result name="success" type="redirectAction">listJournal</result>
 		</action>
 		<action name="editJournal" class="editJournalAction">
-			<result name="success" type="redirect">listJournal.action?journal_id=${journal_id}</result>
+			<result name="success" type="redirectAction">listJournal?journal_id=${journal_id}</result>
 		</action>
 		<action name="showArticle" class="showArticleAction">
 			<result name="success">Article.jsp</result>
 		</action>
 		<action name="addParagraph" class="addParagraphAction">
-			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
+			<result name="success" type="redirectAction">showArticle?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
 		<action name="modifyParagraph" class="modifyParagraphAction">
