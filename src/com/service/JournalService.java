@@ -24,4 +24,6 @@ public interface JournalService {
 	public Paragraph find_paragraph_by_paragraph_id(Integer paragraph_id);
 	@SuppressWarnings("rawtypes")
 	public List find_all_paragraph_of_user(Integer userid);
+	public void update_paragraph(Paragraph paragraph);
+	public void delete_paragraph(Paragraph paragraph);
 }

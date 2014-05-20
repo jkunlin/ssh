@@ -41,5 +41,9 @@ public interface JournalDAO {
 	public List find_all_paragraph_of_user(Integer userid);
 	
 	public Paragraph find_paragraph_by_paragraph_id(Integer paragraph_id);
+	
+	public void update_paragraph(Paragraph paragraph);
+	
+	public void delete_paragraph(Paragraph paragraph);
 //	public void update_journal(Journal journal);
 }

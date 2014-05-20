@@ -60,5 +60,13 @@
 			<result name="success" type="redirect">showArticle.action?article_id=${article_id}&amp;chapter_id=${chapter_id}</result>
 			<result name="input">/wellcome.jsp</result>
 		</action>
+		<action name="modifyParagraph" class="modifyParagraphAction">
+			<result name="success" type="redirectAction">userManage</result>
+			<result name="input">/wellcome.jsp</result>
+		</action>
+		<action name="deleteParagraph" class="deleteParagraphAction">
+			<result name="success" type="redirectAction">userManage</result>
+			<result name="input">/wellcome.jsp</result>
+		</action>
 	</package>
 </struts>    

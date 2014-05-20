@@ -19,7 +19,9 @@
 				<prop key="hibernate.dialect">
 					org.hibernate.dialect.MySQLDialect
 				</prop>
+				<prop key = "hibernate.show_sql">true</prop>
 			</props>
+			
 		</property>
 		 
 		<property name="mappingResources">
@@ -127,6 +129,16 @@
 		</property>
 	</bean>
 	<bean id="showParagraphAction" class="com.action.journal.showParagraph" scope="prototype">
+		<property name="service">
+			<ref bean="journalService"></ref>
+		</property>
+	</bean>
+	<bean id="modifyParagraphAction" class="com.action.journal.modifyParagraphAction" scope="prototype">
+		<property name="service">
+			<ref bean="journalService"></ref>
+		</property>
+	</bean>
+	<bean id="deleteParagraphAction" class="com.action.journal.DeleteParagraphAction" scope="prototype">
 		<property name="service">
 			<ref bean="journalService"></ref>
 		</property>

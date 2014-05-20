@@ -102,7 +102,7 @@
                             </div>
                           </div>
                            <div class="control-group">
-                            <label class="control-label" for="inputOldPassword">Password</label>
+                            <label class="control-label" for="inputOldPassword">Old Password</label>
                             <div class="controls">
                               <input type="password" name="old_password" id="inputOldPassword" placeholder="Old Password">
                             </div>

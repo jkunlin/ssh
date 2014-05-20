@@ -109,12 +109,24 @@ public class JournalServiceImpl implements JournalService {
 		return this.journalDAO.find_paragraph_by_paragraph_id(paragraph_id);
 	}
 
+	
 	@SuppressWarnings("rawtypes")
 	@Override
 	public List find_all_paragraph_of_user(Integer userid) {
 		return this.journalDAO.find_all_paragraph_of_user(userid);
 	}
 
+	@Override
+	public void update_paragraph(Paragraph paragraph) {
+		this.journalDAO.update_paragraph(paragraph);
+		
+	}
+
+	@Override
+	public void delete_paragraph(Paragraph paragraph) {
+		this.journalDAO.delete_paragraph(paragraph);
+		
+	}
 	
 
 }

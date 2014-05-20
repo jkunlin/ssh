@@ -164,7 +164,21 @@ public class JournalDAOImpl implements JournalDAO {
 		session.close();
 		return paragraph;
 	}
-
 	
+	@Override
+	public void update_paragraph(Paragraph paragraph) {
+		Session session = sessionFactory.openSession();
+		session.update(paragraph);
+		session.flush();
+		session.close();
+	}
 
+	@Override
+	public void delete_paragraph(Paragraph paragraph) {
+		Session session = sessionFactory.openSession();
+		String hql = "delete from Paragraph paragraph where paragraph_id = " + paragraph.getParagraph_id();
+		Query query = session.createQuery(hql);
+		query.executeUpdate();
+		session.close();
+	}
 }
