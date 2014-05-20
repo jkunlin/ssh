@@ -76,13 +76,35 @@ public class JournalDAOImpl implements JournalDAO {
 		
 		
 		for (int i = 0; i <= max_sequence; ++i) {
+			hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = :sequence order by paragraph.score desc";
+			query = session.createQuery(hql);
+			query.setInteger("chapter_id", chapter_id);
+			query.setInteger("sequence", i);
+			query.setFirstResult(0);
+			query.setMaxResults(3);
+			List<Paragraph> high_score_paragraphs = query.list();
 			hql = "from Paragraph paragraph where chapter_id = :chapter_id and sequence = :sequence order by rand()";
 			query = session.createQuery(hql);
 			query.setInteger("chapter_id", chapter_id);
 			query.setInteger("sequence", i);
 			query.setFirstResult(0);
 			query.setMaxResults(5);
-			res.add(query.list());
+			List<Paragraph> random_score_paragraphs = query.list();
+			int count = 0;
+			for (int j = 0; count < 2 && j < random_score_paragraphs.size(); ++j) {
+				boolean isDuplicate = false;
+				for (int k = 0; k < high_score_paragraphs.size(); ++k) {
+					if(random_score_paragraphs.get(j).getParagraph_id() == high_score_paragraphs.get(k).getParagraph_id()) {
+						isDuplicate = true;
+						break;
+					}
+				}
+				if (!isDuplicate) {
+					high_score_paragraphs.add(random_score_paragraphs.get(j));
+					++count;
+				}
+			}
+			res.add(high_score_paragraphs);
 		}
 		session.close();
 		return res;

@@ -15,16 +15,27 @@ function starHTMLMaker(potitionId,id0,id1){
 	var o=$('#'+potitionId);
 	arr.push('<table><tr>');
 	arr.push('<td>时间: 2010-03-16 <span class="pipe">|</span>评分：</td>');
-	arr.push('<td><div id="star'+id0+id1+'" style="width:140px"/></td>');	
-	arr.push('<td><div id="result'+id0+id1+'" style="display:none"/></td>');//从这个id为result的div能够读到 当前用户评分的值
+	//arr.push('<td><div id="star'+id0+id1+'" style="width:140px"/></td>');	
+	//arr.push('<td><div id="result'+id0+id1+'" style="display:none"/></td>');
+	
+	arr.push('<td><form action="logout" method="post" target="id_iframe"><select id="pointList" name="pointList">');
+	arr.push('<option value="1">1</option>');
+	arr.push('<option value="2">2</option>');
+	arr.push('<option value="3">3</option>');
+	arr.push('<option value="4">4</option>');
+	arr.push('<option value="5">5</option>');
+	arr.push('</select>');
+	arr.push('<input type="submit" value="提交" />');
+	arr.push('</form>');
+	arr.push('<iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>');
+	
 	arr.push('</tr></table>');
 	o.append(arr.join(' '));
 }
-//这个函数会调用上面两个函数来生成 评分以及评分上面的东西
 function starHTMLMakerGrounp(potition,id0,number){
 	for(var i=0;i<number;i++){
 		starHTMLMaker(potition+id0+i,id0,i);	
-		starOperation(id0,i);
+		//starOperation(id0,i);
 	}
 }
 //这个函数会用来生成"我的看法"

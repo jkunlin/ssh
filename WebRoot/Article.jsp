@@ -386,12 +386,14 @@ $(function(){
 		<ul>
 			<s:iterator value="#request.paragraph_list.get(0)" id="paragraph" status="st">
 				<li><a href="#"><img width="630" height="210" src="images/pic_0x${st.index + 1}.jpg" alt="<s:property value="#paragraph.content"/>" /></a></li> 
+				<input type="text" style="display: none;" value="<s:property value="#paragraph.paragraph_id"/>">
 			</s:iterator>
 			<s:bean name="org.apache.struts2.util.Counter" id="counter">
 			   <s:param name="first" value="#request.paragraph_list.get(0).size() + 1" />
 			   <s:param name="last" value="5" />
 			   <s:iterator>
 			     <li><a href="#"><img width="630" height="210" src="images/pic_0<s:property/>.jpg" alt="" /></a></li>
+			     <input type="text" style="display: none;" value="-1">
 			   </s:iterator>
 			</s:bean>
 			
