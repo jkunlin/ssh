@@ -35,7 +35,7 @@ public class UserManageAction extends ActionSupport {
 		Integer userid = (Integer)session.get("userid");
 		request.put("note", userService.find_note_of_user(userid));
 		request.put("user", userService.find_user_by_userid(userid));
-		
+		request.put("paragraphs", journalService.find_all_paragraph_of_user(userid));
 		return SUCCESS;
 	}
 }

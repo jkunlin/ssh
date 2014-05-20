@@ -15,8 +15,17 @@
 </head>
 
 <body>
+	
 	<div class="container">
-    	<h5 style="float:right;">Welcome Back! XXX&emsp;<a href="wellcome.jsp">log out</a></h5><br>
+			<header>
+			    <s:if test="#session.username != null">
+			    	<h5 style="float:right;">Welcome Back! <s:property value="#session.username"></s:property><a href="logout.action">&emsp;log out</a></h5><br>
+			    </s:if>
+			    <s:else>
+			    	<h5 style="float:right;"><a href="wellcome.jsp">&emsp;log in</a></h5><br>
+			    </s:else>
+			</header>
+    	
         <div class="page-header">
             <div class="text-success">
                 <h1 align="center">My Space  <small><em>user management web</em></small></h1>
@@ -36,7 +45,7 @@
             <div class="tab-content">
                <div class="tab-pane active" id="tab1">
            		 <p class="text-info">用户笔记</p>       
-               	 <textarea  rows="5" cols="100" id="note" style="overflow: auto;"></textarea>
+               	 <textarea  rows="5" cols="100" id="note" style="overflow: auto;"><s:property value="#request.note"></s:property></textarea>
                </div>
                
                <div class="tab-pane" id="tab2">
@@ -45,56 +54,33 @@
                     <table class="table table-striped table-hover table-bordered">
                             <thead>
                               <tr>
-                                <th>期刊号</th>
-                                <th>文章号</th>
-                                <th>段落号</th>
+                                <th>期刊</th>
+                                <th>文章标题</th>
+                                <th>章节</th>
+                                <th>段落</th>
                               </tr>
                             </thead>
-                            <tr>
-                              <td>2014.5</td>
-                              <td>2</td>
-                              <td><a href="paragraph.html">3</a></td>
-                              
-                            </tr>
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                </tr>
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                      </tr>
-                            
-                <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                      </tr>
-                            
-                <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                      </tr>
-                            
-                <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                  </tr>
+                            <s:iterator value="#request.paragraphs" id="paragraph">
+                            	<tr>
+                            		<td><s:property value="#paragraph[0]"></s:property></td>
+                            		<td><s:property value="#paragraph[1]"></s:property></td>
+                            		<td><s:property value="#paragraph[2]"></s:property></td>
+                            		<td><s:property value="#paragraph[3]"></s:property></td>
+                            	</tr>
+                            </s:iterator>
+                           <!-- 
                           <script language="javascript">
                                var tl = 10;
                                while(tl>0)
                                {	   
                                     document.write('<tr><td>') ;
                                     document.write(tl);	
-                                    document.write('</td><td></td><td></td></tr>');
+                                    document.write('</td><td><td></td></td><td></td></tr>');
                                     tl--; 
                                }
                                document.title="My Space";
                            </script>
+                            -->
                         </table>
                  </div> 
                </div>
@@ -106,13 +92,13 @@
                          <div class="control-group">
                             <label class="control-label" for="inputName">User Name</label>
                             <div class="controls">
-                              <input type="text" id="inputName" placeholder="ID">
+                              <input type="text" id="inputName" placeholder="ID" value="${request.user.username }">
                             </div>
                           </div>
                           <div class="control-group">
                             <label class="control-label" for="inputEmail">Email</label>
                             <div class="controls">
-                              <input type="text" id="inputEmail" placeholder="Email">
+                              <input type="text" id="inputEmail" placeholder="Email" value="${request.user.email }">
                             </div>
                           </div>
                           <div class="control-group">
